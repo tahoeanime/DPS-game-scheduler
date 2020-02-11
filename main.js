@@ -24,7 +24,7 @@ function GetData(){
   return database.ref('/events').once('value', function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
     var eventData = childSnapshot.val();
-    document.getElementById("past-events").innerHTML += '<div class="col-sm"><div class="card"><h5 class="card-header">'+ eventData.title +'</h5><div class="card-body"><p class="card-text" id="event1">'+eventData.details+'</p></div><ul class="list-group list-group-flush"><li class="list-group-item">Players: '+eventData.signups.signups+'/'+eventData.spot+'</li><li class="list-group-item">Start time: '+eventData.starttime+' '+eventData.timezone+'</li><li class="list-group-item">End time : '+eventData.endtime+' '+eventData.timezone+'</li></ul></div></div>';
+    document.getElementById("past-events").innerHTML += '<div class="col"><div class="card"><h5 class="card-header">'+ eventData.title +'</h5><div class="card-body"><p class="card-text" id="event1">'+eventData.details+'</p></div><ul class="list-group list-group-flush"><li class="list-group-item">Players: '+eventData.signups.signups+'/'+eventData.spot+'</li><li class="list-group-item">Start time: '+eventData.starttime+' '+eventData.timezone+'</li><li class="list-group-item">End time : '+eventData.endtime+' '+eventData.timezone+'</li></ul></div></div>';
     console.log(eventData);
   });
 });
