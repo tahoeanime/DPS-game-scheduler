@@ -47,7 +47,7 @@ function GetData(){
     //Add to the html on the page
     for(x in playerData)
     {
-      document.getElementById("players").innerHTML += '<li class="list-group-item">'+playerData[x].gamertag+' <a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + x +"'" + ','+"'"+'joined' + "'" + ')">DELETE</a></li>';
+      document.getElementById("players").innerHTML += '<li class="list-group-item">'+playerData[x].gamertag+' <a class="btn btn-sm btn-outline float-right" data-toggle="collapse" href="#joinedDelete" role="button" aria-expanded="false" aria-controls="collapseExample">DELETE</a></li><div class="collapse" id="joinedDelete"><div class="card card-body">Sure you want to delete?<a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + x +"'" + ','+"'"+'joined' + "'" + ')">DELETE</a></div></div>';
     }
     for(y in backupData)
     {
