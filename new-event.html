@@ -11,9 +11,7 @@
   <link rel="stylesheet" href="https://bmansayswhat.github.io/game-scheduler/pickadate.js-3.6.2/lib/themes/default.date.css">
   <link rel="stylesheet" href="https://bmansayswhat.github.io/game-scheduler/pickadate.js-3.6.2/lib/themes/default.time.css">
 
-
-
-  <title>Game Scheduler</title>
+  <!-- <title>Game Scheduler</title> -->
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -37,23 +35,23 @@
     </div>
     <div class="row">
       <div class="col">
-        <form>
+        <form id="new-event" action="" method="post">
           <fieldset class="form-group">
             <legend class="col-form-label">Game</legend>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="game-radios" value="destiny-2" id="destiny-2">
+              <input class="form-check-input" type="radio" name="game-radios" value="destiny-2" id="game">
               <label class="form-check-label" for="destiny-2">
                 Destiny 2
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="game-radios" value="elder-scrolls" id="elder-scrolls">
+              <input class="form-check-input" type="radio" name="game-radios" value="elder-scrolls" id="game">
               <label class="form-check-label" for="elder-scrolls">
                 Elder Scrolls Online
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="game-radios" value="other" id="other">
+              <input class="form-check-input" type="radio" name="game-radios" value="other" id="game">
               <label class="form-check-label" for="other">
                 Other
               </label>
@@ -96,25 +94,25 @@
               <fieldset class="form-group">
                 <legend class="col-form-label">Timezone</legend>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="timezones" value="pst" id="pst">
+                  <input class="form-check-input" type="radio" name="timezones" value="PST" id="timezones">
                   <label class="form-check-label" for="pst">
                     PST
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="timezones" value="mst" id="mst">
+                  <input class="form-check-input" type="radio" name="timezones" value="MST" id="timezones">
                   <label class="form-check-label" for="mst">
                     MST
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="timezones" value="cst" id="cst">
+                  <input class="form-check-input" type="radio" name="timezones" value="CST" id="timezones">
                   <label class="form-check-label" for="cst">
                     CST
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="timezones" value="est" id="est">
+                  <input class="form-check-input" type="radio" name="timezones" value="EST" id="timezones">
                   <label class="form-check-label" for="est">
                     EST
                   </label>
@@ -149,7 +147,7 @@
             <label for="gamertag">Gamertag</label>
             <input type="text" class="form-control" id="gamertag" placeholder="Gamertag">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" value="Submit by Id" onclick="SubmitEvent()">Submit</button>
         </form>
       </div>
     </div>
@@ -163,8 +161,10 @@
   <script src="https://bmansayswhat.github.io/game-scheduler/pickadate.js-3.6.2/lib/picker.js"></script>
   <script src="https://bmansayswhat.github.io/game-scheduler/pickadate.js-3.6.2/lib/picker.date.js"></script>
   <script src="https://bmansayswhat.github.io/game-scheduler/pickadate.js-3.6.2/lib/picker.time.js"></script>
-  <script src="https://bmansayswhat.github.io/game-scheduler/main.js"></script>
-
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
+  <script src="https://bmansayswhat.github.io/game-scheduler/database.js"></script>
+  <script src="https://bmansayswhat.github.io/game-scheduler/new-event.js"></script>
 
 </body>
 </html>

@@ -34,19 +34,19 @@
       <fieldset class="form-group">
         <!-- <legend class="col-form-label">Game</legend> -->
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="game-radios" value="destiny-2" id="destiny-2" checked>
+          <input class="form-check-input" type="radio" name="game-radios" value="destiny-2" id="destiny-2" checked onclick="GetGame()">
           <label class="form-check-label" for="destiny-2">
             Destiny 2
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="game-radios" value="elder-scrolls" id="elder-scrolls">
+          <input class="form-check-input" type="radio" name="game-radios" value="elder-scrolls" id="elder-scrolls" onclick="GetGame()">
           <label class="form-check-label" for="elder-scrolls">
             Elder Scrolls Online
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="game-radios" value="other" id="other">
+          <input class="form-check-input" type="radio" name="game-radios" value="other" id="other" onclick="GetGame()">
           <label class="form-check-label" for="other">
             Other
           </label>
@@ -91,28 +91,10 @@
   <script src="https://bmansayswhat.github.io/game-scheduler/pickadate.js-3.6.2/lib/picker.js"></script>
   <script src="https://bmansayswhat.github.io/game-scheduler/pickadate.js-3.6.2/lib/picker.date.js"></script>
   <script src="https://bmansayswhat.github.io/game-scheduler/pickadate.js-3.6.2/lib/picker.time.js"></script>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-       https://firebase.google.com/docs/web/setup#available-libraries -->
-
-  <!-- <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyBmgtwduBCHIg8RNXB2Wv978QPZQCVan4I",
-      authDomain: "dungeon-protocols.firebaseapp.com",
-      databaseURL: "https://dungeon-protocols.firebaseio.com",
-      projectId: "dungeon-protocols",
-      storageBucket: "dungeon-protocols.appspot.com",
-      messagingSenderId: "701545727450",
-      appId: "1:701545727450:web:269a08f0258a5e74e9ece3"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script> -->
-  <script src="/game-scheduler/main.js"></script>
+  <script src="https://bmansayswhat.github.io/game-scheduler/database.js"></script>
+  <script src="https://bmansayswhat.github.io/game-scheduler/get-events.js"></script>
 
 
 </body>
