@@ -47,7 +47,7 @@ function GetData(game){
           <li class="list-group-item"></li>
           <li class="list-group-item"><strong>Start:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</li>
           <li class="list-group-item"><strong>End:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</li>
-          <li class="list-group-item"><span class="badge badge-secondary" id="playerCount-${eventKey}">0/0</span> <span class="badge badge-secondary" id="backupCount-${eventKey}">0/0</span></li>
+          <li class="list-group-item"><span class="badge badge-success" id="playerCount-${eventKey}">0/0</span> <span class="badge badge-success" id="backupCount-${eventKey}">0/0</span></li>
         </ul>
         <div class="card-body">
           <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary">View event</a>
@@ -82,8 +82,19 @@ function GetData(game){
         backupCount++;
       }
 
+      //Update the player counts on the page
       document.getElementById("playerCount-"+eventKey).innerHTML = 'Players: ' + playerCount + '/' + eventData.openSpots;
       document.getElementById("backupCount-"+eventKey).innerHTML = 'Backups: ' + backupCount + '/' + eventData.backupSpots;
+
+      //Change the color of the span based on the player counts
+      if(playerCount == eventData.openSpots)
+      {
+        document.getElementById("playerCount-"+eventKey).className = "badge badge-secondary";
+      }
+      if(backupCount == eventData.backupSpots)
+      {
+        document.getElementById("backupCount-"+eventKey).className = "badge badge-secondary";
+      }
 
     });
   });
