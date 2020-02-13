@@ -6,6 +6,7 @@ var month = d.getMonth() + 1; // Since getMonth() returns month from 0-11 not 1-
 var year = d.getFullYear();
 var dateStr = month + "/" + date + "/" + year;
 var yesterday = new Date(dateStr).getTime();
+console.log(dateStr);
 
 //Get the selected game from the radio buttons on the page
 function GetGame(){
