@@ -38,7 +38,7 @@ function GetData(game){
       console.log(eventKey);
       //The template we'll use for the data
       const eventCard = `
-      <div class="card">
+      <div class="card mt-4">
         <div class="card-body">
           <h5 class="card-title">${eventData.title}</h5>
           <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
