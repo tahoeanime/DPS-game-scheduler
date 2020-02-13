@@ -46,6 +46,7 @@ function GetData(game){
           <li class="list-group-item"></li>
           <li class="list-group-item"><strong>Start:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</li>
           <li class="list-group-item"><strong>End:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</li>
+          <li class="list-group-item"><span class="badge badge-success" id="playerCount-${eventKey}">0/0</span> <span class="badge badge-success" id="backupCount-${eventKey}">0/0</span></li>
         </ul>
         <div class="card-body">
           <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary">View event</a>
@@ -56,7 +57,43 @@ function GetData(game){
       </div>`;
       //Add to the html on the page
       document.getElementById("past-events").innerHTML += eventCard;
-      console.log(eventData);
+      console.log(eventData
+
+        //Seperate out the players joined data from the data we already pulled
+        const playerData = eventData.joined;
+        const backupData = eventData.backups;
+
+        //Initialize a variable to count players
+        var playerCount = 0;
+
+        //Count the players
+        for(x in playerData)
+        {
+          playerCount++;
+        }
+
+        //Initialize a variable to count backups
+        var backupCount = 0;
+
+        //Count the backups
+        for(y in backupData)
+        {
+          backupCount++;
+        }
+
+        //Update the player counts on the page
+        document.getElementById("playerCount-"+eventKey).innerHTML = 'Players: ' + playerCount + '/' + eventData.openSpots;
+        document.getElementById("backupCount-"+eventKey).innerHTML = 'Backups: ' + backupCount + '/' + eventData.backupSpots;
+
+        //Change the color of the span based on the player counts
+        if(playerCount == eventData.openSpots)
+        {
+          document.getElementById("playerCount-"+eventKey).className = "badge badge-secondary";
+        }
+        if(backupCount == eventData.backupSpots)
+        {
+          document.getElementById("backupCount-"+eventKey).className = "badge badge-secondary";
+        }
     });
   });
 }
