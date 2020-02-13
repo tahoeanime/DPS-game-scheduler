@@ -149,4 +149,21 @@ function SubmitEvent() {
     // document.getElementById("new-event").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
     document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
   }
+  else
+  {
+    $('#start-date').pickadate({
+      format: 'mm/dd/yyyy',
+      min: 0
+    });
+    $('#end-date').pickadate({
+      format: 'mm/dd/yyyy',
+      min: 0
+    });
+    $('#start-time').pickatime({
+      min: 0
+    });
+    $('#end-time').pickatime({
+      min: 0
+    });
+  }
 }
