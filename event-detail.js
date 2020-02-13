@@ -86,7 +86,6 @@ function PlayerJoin() {
       gamertag
     });
   }
-
   location.reload();
   // document.getElementById("player-join").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+e +"&game="+game;
 }
