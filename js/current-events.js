@@ -1,15 +1,10 @@
-// Make sure any browser can get today's Date
-if (!Date.now) {
-    Date.now = function() { return new Date().getTime(); }
-}
-
+//Get the current date and store it in milliseconds
+//Instead of using Date.now() which is too precise, this stops at day, doesn't include time
 var d = new Date();
 var date = d.getDate();
 var month = d.getMonth() + 1; // Since getMonth() returns month from 0-11 not 1-12
 var year = d.getFullYear();
 var dateStr = month + "/" + date + "/" + year;
-
-
 var today = new Date(dateStr).getTime();
 console.log(today);
 
