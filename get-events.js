@@ -14,7 +14,6 @@ function GetGame(){
 
 //Run the GetGame function to initialize the results on the page
 GetGame();
-
 //Get the data from the database
 function GetData(game){
   //Clear the html on the page

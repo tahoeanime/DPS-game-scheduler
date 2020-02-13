@@ -86,7 +86,6 @@ function PlayerJoin() {
       gamertag
     });
   }
-
   location.reload();
   // document.getElementById("player-join").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+e +"&game="+game;
 }
@@ -94,6 +93,6 @@ function PlayerJoin() {
 function PlayerDelete(id, joinType)
 {
   var ref = firebase.database().ref('/' + game + '/' + e + '/'+ joinType +'/' + id).remove();
-  document.getElementById("player-join").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+e +"&game="+game;
-
+  // document.getElementById("player-join").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+e +"&game="+game;
+  location.reload();
 }

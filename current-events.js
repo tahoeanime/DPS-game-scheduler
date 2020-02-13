@@ -18,7 +18,6 @@ function GetGame(){
   }
   GetData(game);
 }
-
 //Run the GetGame function to initialize the results on the page
 GetGame();
 
