@@ -1,12 +1,11 @@
 //Get the current date and store it in milliseconds
 //Instead of using Date.now() which is too precise, this stops at day, doesn't include time
 var d = new Date();
-var date = d.getDate();
+var date = d.getDate() - 1; //Yesterday
 var month = d.getMonth() + 1; // Since getMonth() returns month from 0-11 not 1-12
 var year = d.getFullYear();
 var dateStr = month + "/" + date + "/" + year;
-var today = new Date(dateStr).getTime();
-var invToday = 0-today;
+var yesterday = new Date(dateStr).getTime();
 
 //Get the selected game from the radio buttons on the page
 function GetGame(){
@@ -29,7 +28,7 @@ function GetData(game){
   //Clear the html on the page
   document.getElementById("past-events").innerHTML = '';
   //Get the data from the database for the selected radio button
-  return database.ref('/' + game).orderByChild('startDateMil').endAt(today).once('value', function(snapshot) {
+  return database.ref('/' + game).orderByChild('startDateMil').endAt(yesterday).once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       //Store the data
       const eventData = childSnapshot.val();
