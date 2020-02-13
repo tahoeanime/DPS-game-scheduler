@@ -41,7 +41,9 @@ function SubmitEvent() {
     complete = false;
     var element = document.getElementById("event-title");
     element.classList.add("is-invalid");
-    element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event a title</div>';
+    if(  element.parentElement.querySelector("#invalid-feedback") != null){
+      element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event a title</div>';
+    }
   }
 
   var startDate = document.getElementById("start-date").value;
