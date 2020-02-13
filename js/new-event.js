@@ -6,8 +6,12 @@ $('#end-date').pickadate({
   format: 'mm/dd/yyyy',
   min: 0
 });
-$('#start-time').pickatime();
-$('#end-time').pickatime();
+$('#start-time').pickatime({
+  min: 0
+});
+$('#end-time').pickatime({
+  min: 0
+});
 
 // Make sure any browser can get today's Date
 // This will be inverted and stored so we can retrieve items in desc order
