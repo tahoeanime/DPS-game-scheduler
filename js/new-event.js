@@ -46,6 +46,7 @@ function SubmitEvent() {
   var gamertag = document.getElementById("gamertag").value;
   var inverseDate = 0 - Date.now();
   var startDateMil = new Date(startDate).getTime();
+  var invStartDateMil = 0-startDateMil;
 
   //Submit the form
   // document.getElementById("new-event").submit();
@@ -66,7 +67,8 @@ function SubmitEvent() {
     inverseDate : inverseDate,
     playersJoined : 0,
     playersBackup : 0,
-    startDateMil : startDateMil
+    startDateMil : startDateMil,
+    invStartDateMil : invStartDateMil
   });
 
   //set the form action to open the event details page which will show the data for the event
