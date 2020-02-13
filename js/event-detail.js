@@ -122,7 +122,7 @@ function PlayerJoin() {
     }
     location.reload();
   }
-  else if(gamertag == null) {
+  else if(gamertag == "") {
     var element = document.getElementById("gamertag");
     //Add the is-invalid class which makes the field red
     element.classList.add("is-invalid");
