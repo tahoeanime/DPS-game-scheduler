@@ -46,15 +46,20 @@ function GetData(){
     //Seperate out the players joined data from the data we already pulled
     const playerData = eventData.joined;
     const backupData = eventData.backups;
+
+    var playerCount = 0;
     //Add to the html on the page
     for(x in playerData)
     {
       document.getElementById("players").innerHTML += '<li class="list-group-item">'+playerData[x].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-'+ x +'" role="button" aria-expanded="false" aria-controls="collapseExample">Remove</a></li><div class="collapse" id="j-'+ x +'"><div class="card-body">Remove '+playerData[x].gamertag+'?<a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + x +"'" + ','+"'"+'joined' + "'" + ')">DELETE</a></div></div>';
+      playerCount++;
     }
     for(y in backupData)
     {
       document.getElementById("backups").innerHTML += '<li class="list-group-item">'+backupData[y].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#b-'+ y +'" role="button" aria-expanded="false" aria-controls="collapseExample">Remove</a></li><div class="collapse" id="b-'+ y +'"><div class="card-body">Remove '+backupData[y].gamertag+'?<a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + y +"'" + ','+"'"+'backups' + "'" + ')">DELETE</a></div></div>';
     }
+
+    console.log("Player count: " + playerCount);
   });
 }
 
