@@ -47,11 +47,11 @@ function GetData(){
     //Add to the html on the page
     for(x in playerData)
     {
-      document.getElementById("players").innerHTML += '<li class="list-group-item">'+playerData[x].gamertag+' <a class="btn btn-sm btn-outline float-right" data-toggle="collapse" href="#joinedDelete" role="button" aria-expanded="false" aria-controls="collapseExample">DELETE</a></li><div class="collapse" id="joinedDelete"><div class="card card-body">Sure you want to delete?<a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + x +"'" + ','+"'"+'joined' + "'" + ')">DELETE</a></div></div>';
+      document.getElementById("players").innerHTML += '<li class="list-group-item">'+playerData[x].gamertag+' <a class="btn btn-sm btn-outline float-right" data-toggle="collapse" href="#j-'+ x +'" role="button" aria-expanded="false" aria-controls="collapseExample">DELETE</a></li><div class="collapse" id="j-'+ x +'"><div class="card card-body">Sure you want to delete?<a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + x +"'" + ','+"'"+'joined' + "'" + ')">DELETE</a></div></div>';
     }
     for(y in backupData)
     {
-      document.getElementById("backups").innerHTML += '<li class="list-group-item">'+backupData[y].gamertag+' <a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + y +"'" + ','+"'"+'backups' + "'" + ')">DELETE</a></li>';
+      document.getElementById("backups").innerHTML += '<li class="list-group-item">'+playerData[y].gamertag+' <a class="btn btn-sm btn-outline float-right" data-toggle="collapse" href="#b-'+ y +'" role="button" aria-expanded="false" aria-controls="collapseExample">DELETE</a></li><div class="collapse" id="b-'+ y +'"><div class="card card-body">Sure you want to delete?<a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + y +"'" + ','+"'"+'joined' + "'" + ')">DELETE</a></div></div>';
     }
   });
 }
