@@ -55,6 +55,7 @@ function GetData(){
     {
       playerCount++;
       document.getElementById("players").innerHTML += '<li class="list-group-item">'+playerData[x].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-'+ x +'" role="button" aria-expanded="false" aria-controls="collapseExample">Remove</a></li><div class="collapse" id="j-'+ x +'"><div class="card-body">Remove '+playerData[x].gamertag+'?<a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + x +"'" + ','+"'"+'joined' + "'" + ')">DELETE</a></div></div>';
+      document.getElementById("playerCount").innerHTML = 'Players: ' + playerCount + '/' + eventData.openSpots;
     }
 
     //Initialize a variable to count backups
@@ -65,6 +66,7 @@ function GetData(){
     {
       backupCount++;
       document.getElementById("backups").innerHTML += '<li class="list-group-item">'+backupData[y].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#b-'+ y +'" role="button" aria-expanded="false" aria-controls="collapseExample">Remove</a></li><div class="collapse" id="b-'+ y +'"><div class="card-body">Remove '+backupData[y].gamertag+'?<a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + y +"'" + ','+"'"+'backups' + "'" + ')">DELETE</a></div></div>';
+      document.getElementById("backupCount").innerHTML = 'Backups: ' + playerCount + '/' + eventData.backupSpots;
     }
 
     console.log("Player count: " + playerCount);
