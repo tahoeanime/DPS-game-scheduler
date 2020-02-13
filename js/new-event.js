@@ -40,7 +40,6 @@ function SubmitEvent() {
   {
     complete = false;
     var element = document.getElementById("event-title");
-    element.classList.add("is-invalid");
     element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event a title</div>';
   }
 
@@ -49,7 +48,6 @@ function SubmitEvent() {
   {
     complete = false;
     var element = document.getElementById("start-date");
-    element.classList.add("is-invalid");
     element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event a start date</div>';
 
   }
@@ -59,7 +57,6 @@ function SubmitEvent() {
   {
     complete = false;
     var element = document.getElementById("start-time");
-    element.classList.add("is-invalid");
     element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event a start time</div>';
 
   }
@@ -69,7 +66,6 @@ function SubmitEvent() {
   {
     complete = false;
     var element = document.getElementById("end-date");
-    element.classList.add("is-invalid");
     element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event an end date</div>';
 
   }
@@ -79,7 +75,6 @@ function SubmitEvent() {
   {
     complete = false;
     var element = document.getElementById("end-time");
-    element.classList.add("is-invalid");
     element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event an end time</div>';
 
   }
@@ -103,7 +98,6 @@ function SubmitEvent() {
   {
     complete = false;
     var element = document.getElementById("details");
-    element.classList.add("is-invalid");
     element.parentElement.innerHTML += '<div class="invalid-feedback">Give the details of your event</div>';
 
   }
@@ -113,7 +107,6 @@ function SubmitEvent() {
   {
     complete = false;
     var element = document.getElementById("gamertag");
-    element.classList.add("is-invalid");
     element.parentElement.innerHTML += '<div class="invalid-feedback">Provide your gamertag</div>';
 
   }
