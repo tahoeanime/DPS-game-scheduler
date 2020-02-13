@@ -75,11 +75,13 @@ function GetData(){
     if(playerCount == eventData.openSpots)
     {
       document.getElementById("joinMain").disabled = true;
+      document.getElementById("joinBackup").checked = true;
     }
 
     if(backupCount == eventData.backupSpots)
     {
       document.getElementById("joinBackup").disabled = true;
+      document.getElementById("joinMain").checked = true;
     }
 
     if(playerCount == eventData.openSpots && backupCount == eventData.backupSpots)
@@ -120,7 +122,7 @@ function PlayerJoin() {
     }
     location.reload();
   }
-  else {
+  else if(gamertag == null) {
     var element = document.getElementById("gamertag");
     //Add the is-invalid class which makes the field red
     element.classList.add("is-invalid");
