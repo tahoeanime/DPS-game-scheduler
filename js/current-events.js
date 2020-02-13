@@ -27,7 +27,7 @@ GetGame();
 //Get the data from the database
 function GetData(game){
   //Clear the html on the page
-  document.getElementById("past-events").innerHTML = '';
+  document.getElementById("events").innerHTML = '';
   //Get the data from the database for the selected radio button
   return database.ref('/' + game).orderByChild('startDateMil').startAt(today).once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
@@ -56,8 +56,8 @@ function GetData(game){
         </div>
       </div>`;
       //Add to the html on the page
-      document.getElementById("past-events").innerHTML += eventCard;
-      console.log(eventData
+      document.getElementById("events").innerHTML += eventCard;
+      console.log(eventData);
 
         //Seperate out the players joined data from the data we already pulled
         const playerData = eventData.joined;
