@@ -87,7 +87,8 @@ function PlayerJoin() {
     });
   }
 
-  document.getElementById("player-join").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+e +"&game="+game;
+  location.reload();
+  // document.getElementById("player-join").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+e +"&game="+game;
 }
 
 function PlayerDelete(id, joinType)
