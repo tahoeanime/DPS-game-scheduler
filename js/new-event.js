@@ -53,9 +53,12 @@ function SubmitEvent() {
   {
     complete = false;
     var element = document.getElementById("start-date");
+    //Add the is-invalid class which makes the field red
     element.classList.add("is-invalid");
+    //Check if the invalid-feeback class has already been added and if not, add it and the necessary html
+    if(element.parentElement.querySelector(".invalid-feedback") == null){
     element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event a start date</div>';
-
+    }
   }
 
   var startTime = document.getElementById("start-time").value;
@@ -63,9 +66,12 @@ function SubmitEvent() {
   {
     complete = false;
     var element = document.getElementById("start-time");
+    //Add the is-invalid class which makes the field red
     element.classList.add("is-invalid");
-    element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event a start time</div>';
-
+    //Check if the invalid-feeback class has already been added and if not, add it and the necessary html
+    if(element.parentElement.querySelector(".invalid-feedback") == null){
+      element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event a start time</div>';
+    }
   }
 
   var endDate = document.getElementById("end-date").value;
@@ -73,9 +79,12 @@ function SubmitEvent() {
   {
     complete = false;
     var element = document.getElementById("end-date");
+    //Add the is-invalid class which makes the field red
     element.classList.add("is-invalid");
-    element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event an end date</div>';
-
+    //Check if the invalid-feeback class has already been added and if not, add it and the necessary html
+    if(element.parentElement.querySelector(".invalid-feedback") == null){
+      element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event an end date</div>';
+    }
   }
 
   var endTime = document.getElementById("end-time").value;
@@ -83,9 +92,12 @@ function SubmitEvent() {
   {
     complete = false;
     var element = document.getElementById("end-time");
+    //Add the is-invalid class which makes the field red
     element.classList.add("is-invalid");
-    element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event an end time</div>';
-
+    //Check if the invalid-feeback class has already been added and if not, add it and the necessary html
+    if(element.parentElement.querySelector(".invalid-feedback") == null){
+      element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event an end time</div>';
+    }
   }
 
   var tzRadios = document.getElementsByName('timezones');
@@ -107,9 +119,12 @@ function SubmitEvent() {
   {
     complete = false;
     var element = document.getElementById("details");
+    //Add the is-invalid class which makes the field red
     element.classList.add("is-invalid");
-    element.parentElement.innerHTML += '<div class="invalid-feedback">Give the details of your event</div>';
-
+    //Check if the invalid-feeback class has already been added and if not, add it and the necessary html
+    if(element.parentElement.querySelector(".invalid-feedback") == null){
+      element.parentElement.innerHTML += '<div class="invalid-feedback">Give the details of your event</div>';
+    }
   }
 
   var gamertag = document.getElementById("gamertag").value;
@@ -117,9 +132,12 @@ function SubmitEvent() {
   {
     complete = false;
     var element = document.getElementById("gamertag");
+    //Add the is-invalid class which makes the field red
     element.classList.add("is-invalid");
-    element.parentElement.innerHTML += '<div class="invalid-feedback">Provide your gamertag</div>';
-
+    //Check if the invalid-feeback class has already been added and if not, add it and the necessary html
+    if(element.parentElement.querySelector(".invalid-feedback") == null){
+      element.parentElement.innerHTML += '<div class="invalid-feedback">Provide your gamertag</div>';
+    }
   }
 
   var inverseDate = 0 - Date.now();
