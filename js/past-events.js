@@ -30,7 +30,7 @@ function GetData(game){
   //Clear the html on the page
   document.getElementById("past-events").innerHTML = '';
   //Get the data from the database for the selected radio button
-  return database.ref('/' + game).orderByChild('invStartDateMil').startAt(invYesterday).once('value', function(snapshot) {
+  return database.ref('/' + game).orderByChild('invStartDateMil').startAt(invYesterday).limitToFirst(25).once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       //Store the data
       const eventData = childSnapshot.val();
