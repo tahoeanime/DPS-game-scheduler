@@ -50,6 +50,8 @@ function SubmitEvent() {
     complete = false;
     var element = document.getElementById("start-date");
     element.classList.add("is-invalid");
+    element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event a start date</div>';
+
   }
 
   var startTime = document.getElementById("start-time").value;
@@ -58,6 +60,8 @@ function SubmitEvent() {
     complete = false;
     var element = document.getElementById("start-time");
     element.classList.add("is-invalid");
+    element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event a start time</div>';
+
   }
 
   var endDate = document.getElementById("end-date").value;
@@ -66,6 +70,8 @@ function SubmitEvent() {
     complete = false;
     var element = document.getElementById("end-date");
     element.classList.add("is-invalid");
+    element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event an end date</div>';
+
   }
 
   var endTime = document.getElementById("end-time").value;
@@ -74,6 +80,8 @@ function SubmitEvent() {
     complete = false;
     var element = document.getElementById("end-time");
     element.classList.add("is-invalid");
+    element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event an end time</div>';
+
   }
 
   var tzRadios = document.getElementsByName('timezones');
@@ -96,6 +104,8 @@ function SubmitEvent() {
     complete = false;
     var element = document.getElementById("details");
     element.classList.add("is-invalid");
+    element.parentElement.innerHTML += '<div class="invalid-feedback">Give the details of your event</div>';
+
   }
 
   var gamertag = document.getElementById("gamertag").value;
@@ -104,6 +114,8 @@ function SubmitEvent() {
     complete = false;
     var element = document.getElementById("gamertag");
     element.classList.add("is-invalid");
+    element.parentElement.innerHTML += '<div class="invalid-feedback">Provide your gamertag</div>';
+
   }
 
   var inverseDate = 0 - Date.now();
