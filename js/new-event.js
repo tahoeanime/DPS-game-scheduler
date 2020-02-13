@@ -47,24 +47,32 @@ function SubmitEvent() {
   if(startDate == '')
   {
     complete = false;
+    var element = document.getElementById("start-date");
+    element.classList.add("is-invalid");
   }
 
   var startTime = document.getElementById("start-time").value;
   if(startTime == '')
   {
     complete = false;
+    var element = document.getElementById("start-time");
+    element.classList.add("is-invalid");
   }
 
   var endDate = document.getElementById("end-date").value;
   if(endDate == '')
   {
     complete = false;
+    var element = document.getElementById("end-date");
+    element.classList.add("is-invalid");
   }
 
   var endTime = document.getElementById("end-time").value;
   if(endTime == '')
   {
     complete = false;
+    var element = document.getElementById("end-time");
+    element.classList.add("is-invalid");
   }
 
   var tzRadios = document.getElementsByName('timezones');
@@ -81,24 +89,32 @@ function SubmitEvent() {
   if(openSpots == '')
   {
     complete = false;
+    var element = document.getElementById("open-spots");
+    element.classList.add("is-invalid");
   }
 
   var backupSpots = document.getElementById("backup-spots").value;
   if(backupSpots == '')
   {
     complete = false;
+    var element = document.getElementById("backup-spots");
+    element.classList.add("is-invalid");
   }
 
   var details = document.getElementById("details").value;
   if(details == '')
   {
     complete = false;
+    var element = document.getElementById("details");
+    element.classList.add("is-invalid");
   }
 
   var gamertag = document.getElementById("gamertag").value;
   if(gamertag == '')
   {
     complete = false;
+    var element = document.getElementById("gamertag");
+    element.classList.add("is-invalid");
   }
 
   var inverseDate = 0 - Date.now();
