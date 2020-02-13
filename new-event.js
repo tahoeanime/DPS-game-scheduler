@@ -12,8 +12,6 @@ $('#end-time').pickatime();
 if (!Date.now) {
     Date.now = function() { return new Date().getTime(); }
 }
-var theDate = new Date("02/23/2020");
-console.log(theDate.getTime());
 
 // Function called when submit button is pressed
 function SubmitEvent() {
