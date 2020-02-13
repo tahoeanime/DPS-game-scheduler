@@ -45,54 +45,56 @@
     </ul>
   </div>
 </div> -->
-</div>
-</div>
-<div class="row">
-<div class="col-lg mt-4">
-  <div class="card">
-    <h5 class="card-header bg-secondary text-white">Players</h5>
-    <ul class="list-group list-group-flush" id="players">
-    </ul>
-  </div>
-  <div class="card-footer text-muted" id="playerCount">
-    0/0 Players
-  </div>
-</div>
-<div class="col-lg mt-4">
-  <div class="card">
-    <h5 class="card-header bg-secondary text-white">Backups</h5>
-    <ul class="list-group list-group-flush" id="backups">
-    </ul>
-  </div>
-  <div class="card-footer text-muted" id="backupCount">
-    0/0 Backups
-  </div>
-</div>
-</div>
-</div>
-<div class="container mt-4" id="join">
-  <h3>Join this event</h3>
-  <!-- <form id="player-join" action=""> -->
-  <div class="form-group">
-    <label for="gamertag">Gamertag</label>
-    <input type="text" class="form-control" id="gamertag">
-  </div>
-  <fieldset class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="join-radios" value="main" id="joinMain">
-      <label class="form-check-label" for="joinMain">
-        Join as Main
-      </label>
     </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="join-radios" value="backup" id="joinBackup">
-      <label class="form-check-label" for="joinBackup">
-        Join as Backup
-      </label>
+    <div class="col mt-4" id="join">
+      <div class="card">
+        <div class="card-body">
+            <h3>Join this event</h3>
+            <div class="form-group">
+              <label for="gamertag">Gamertag</label>
+              <input type="text" class="form-control" id="gamertag">
+            </div>
+            <fieldset class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="join-radios" value="main" id="joinMain">
+                <label class="form-check-label" for="joinMain">
+                  Main
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="join-radios" value="backup" id="joinBackup">
+                <label class="form-check-label" for="joinBackup">
+                  Backup
+                </label>
+              </div>
+            </fieldset>
+          <button type="submit" class="btn btn-primary" id="joinSubmit" onclick="PlayerJoin()">Join</button>
+        </div>
+      </div>
     </div>
-  </fieldset>
-  <button type="submit" class="btn btn-primary" id="joinSubmit" onclick="PlayerJoin()">Submit</button>
-  <!-- </form> -->
+  </div>
+  <div class="row">
+    <div class="col-lg mt-4">
+      <div class="card">
+        <h5 class="card-header bg-secondary text-white">Players</h5>
+        <ul class="list-group list-group-flush" id="players">
+        </ul>
+      </div>
+      <div class="card-footer text-muted" id="playerCount">
+        0/0 Players
+      </div>
+    </div>
+    <div class="col-lg mt-4">
+      <div class="card">
+        <h5 class="card-header bg-secondary text-white">Backups</h5>
+        <ul class="list-group list-group-flush" id="backups">
+        </ul>
+      </div>
+      <div class="card-footer text-muted" id="backupCount">
+        0/0 Backups
+      </div>
+    </div>
+  </div>
 </div>
 <div class="mt-4 bg-light">
   <div class="container">

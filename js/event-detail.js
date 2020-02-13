@@ -30,9 +30,9 @@ function GetData(){
         <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><strong>Players:</strong> ${eventData.openSpots}</li>
-        <li class="list-group-item"><strong>Start time:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</li>
-        <li class="list-group-item"><strong>End time:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</li>
+        <li class="list-group-item"></li>
+        <li class="list-group-item"><strong>Start:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</li>
+        <li class="list-group-item"><strong>End:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</li>
       </ul>
       <div class="card-footer text-muted">
       Created by: ${eventData.gamertag}
