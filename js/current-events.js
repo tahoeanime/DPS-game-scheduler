@@ -37,21 +37,21 @@ function GetData(game){
       console.log(eventKey);
       //The template we'll use for the data
       const eventCard = `
-      <div class="col-md">
-        <div class="card">
-          <h5 class="card-header">${eventData.title}</h5>
-          <div class="card-body">
-            <p class="card-text" id="event1">${eventData.details}</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"></li>
-            <li class="list-group-item"><strong>Players:</strong> ${eventData.openSpots}</li>
-            <li class="list-group-item"><strong>Start time:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</li>
-            <li class="list-group-item"><strong>End time:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</li>
-          </ul>
-          <div class="card-body">
-            <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary">View event</a>
-          </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">${eventData.title}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"></li>
+          <li class="list-group-item"><strong>Start:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</li>
+          <li class="list-group-item"><strong>End:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</li>
+        </ul>
+        <div class="card-body">
+          <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary">View event</a>
+        </div>
+        <div class="card-footer text-muted">
+        Created by: ${eventData.gamertag}
         </div>
       </div>`;
       //Add to the html on the page
