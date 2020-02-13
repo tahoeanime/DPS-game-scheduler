@@ -4,6 +4,7 @@ if (!Date.now) {
 }
 
 var today = Date.now();
+console.log(today);
 
 //Get the selected game from the radio buttons on the page
 function GetGame(){
