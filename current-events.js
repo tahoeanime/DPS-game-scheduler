@@ -3,7 +3,14 @@ if (!Date.now) {
     Date.now = function() { return new Date().getTime(); }
 }
 
-var today = Date.now();
+var d = new Date();
+var date = d.getDate();
+var month = d.getMonth() + 1; // Since getMonth() returns month from 0-11 not 1-12
+var year = d.getFullYear();
+var dateStr = month + "/" + date + "/" + year;
+
+
+var today = new Date(dateStr).getTime();
 console.log(today);
 
 //Get the selected game from the radio buttons on the page
