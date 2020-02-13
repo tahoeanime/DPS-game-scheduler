@@ -1,8 +1,10 @@
 $('#start-date').pickadate({
-  format: 'mm/dd/yyyy'
+  format: 'mm/dd/yyyy',
+  min: 0
 });
 $('#end-date').pickadate({
-  format: 'mm/dd/yyyy'
+  format: 'mm/dd/yyyy',
+  min: 0
 });
 $('#start-time').pickatime();
 $('#end-time').pickatime();
