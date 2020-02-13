@@ -47,19 +47,44 @@ function GetData(){
     const playerData = eventData.joined;
     const backupData = eventData.backups;
 
+    //Initialize a variable to count players
     var playerCount = 0;
+
     //Add to the html on the page
     for(x in playerData)
     {
-      document.getElementById("players").innerHTML += '<li class="list-group-item">'+playerData[x].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-'+ x +'" role="button" aria-expanded="false" aria-controls="collapseExample">Remove</a></li><div class="collapse" id="j-'+ x +'"><div class="card-body">Remove '+playerData[x].gamertag+'?<a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + x +"'" + ','+"'"+'joined' + "'" + ')">DELETE</a></div></div>';
       playerCount++;
+      document.getElementById("players").innerHTML += '<li class="list-group-item">'+playerData[x].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-'+ x +'" role="button" aria-expanded="false" aria-controls="collapseExample">Remove</a></li><div class="collapse" id="j-'+ x +'"><div class="card-body">Remove '+playerData[x].gamertag+'?<a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + x +"'" + ','+"'"+'joined' + "'" + ')">DELETE</a></div></div>';
     }
+
+    //Initialize a variable to count backups
+    var backupCount = 0;
+
+    //Add to the html on the page
     for(y in backupData)
     {
+      backupCount++;
       document.getElementById("backups").innerHTML += '<li class="list-group-item">'+backupData[y].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#b-'+ y +'" role="button" aria-expanded="false" aria-controls="collapseExample">Remove</a></li><div class="collapse" id="b-'+ y +'"><div class="card-body">Remove '+backupData[y].gamertag+'?<a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + y +"'" + ','+"'"+'backups' + "'" + ')">DELETE</a></div></div>';
     }
 
     console.log("Player count: " + playerCount);
+    console.log("Backup count: " + backupCount);
+
+    if(playerCount == eventData.openSpots)
+    {
+      document.getElementById("joinMain").disabled = true;
+    }
+
+    if(backupCount == eventData.backupSpots)
+    {
+      document.getElementById("joinBackup").disabled = true;
+    }
+
+    if(playerCount == eventData.openSpots && backupCount == eventData.backupSpots)
+    {
+      document.getElementById("joinSubmit").disabled = true;
+    }
+
   });
 }
 
