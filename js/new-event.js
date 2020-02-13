@@ -34,16 +34,38 @@ function SubmitEvent() {
       break;
     }
   }
+
   var title = document.getElementById("event-title").value;
   if(title == '')
   {
-    alert("add a title");
+    complete = false;
+    var element = document.getElementById("event-title");
+    element.classList.add("is-invalid");
+  }
+
+  var startDate = document.getElementById("start-date").value;
+  if(startDate == '')
+  {
     complete = false;
   }
-  var startDate = document.getElementById("start-date").value;
+
   var startTime = document.getElementById("start-time").value;
+  if(startTime == '')
+  {
+    complete = false;
+  }
+
   var endDate = document.getElementById("end-date").value;
+  if(endDate == '')
+  {
+    complete = false;
+  }
+
   var endTime = document.getElementById("end-time").value;
+  if(endTime == '')
+  {
+    complete = false;
+  }
 
   var tzRadios = document.getElementsByName('timezones');
   for (var i = 0, length = tzRadios.length; i < length; i++) {
@@ -54,10 +76,31 @@ function SubmitEvent() {
       break;
     }
   }
+
   var openSpots = document.getElementById("open-spots").value;
+  if(openSpots == '')
+  {
+    complete = false;
+  }
+
   var backupSpots = document.getElementById("backup-spots").value;
+  if(backupSpots == '')
+  {
+    complete = false;
+  }
+
   var details = document.getElementById("details").value;
+  if(details == '')
+  {
+    complete = false;
+  }
+
   var gamertag = document.getElementById("gamertag").value;
+  if(gamertag == '')
+  {
+    complete = false;
+  }
+
   var inverseDate = 0 - Date.now();
   var startDateMil = new Date(startDate).getTime();
   var invStartDateMil = 0-startDateMil;
