@@ -41,6 +41,7 @@ function SubmitEvent() {
     complete = false;
     var element = document.getElementById("event-title");
     element.classList.add("is-invalid");
+    element.innerHTML += '<div class="invalid-feedback">Give your event a title</div>';
   }
 
   var startDate = document.getElementById("start-date").value;
@@ -86,20 +87,8 @@ function SubmitEvent() {
   }
 
   var openSpots = document.getElementById("open-spots").value;
-  if(openSpots == '')
-  {
-    complete = false;
-    var element = document.getElementById("open-spots");
-    element.classList.add("is-invalid");
-  }
 
   var backupSpots = document.getElementById("backup-spots").value;
-  if(backupSpots == '')
-  {
-    complete = false;
-    var element = document.getElementById("backup-spots");
-    element.classList.add("is-invalid");
-  }
 
   var details = document.getElementById("details").value;
   if(details == '')
