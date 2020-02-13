@@ -51,7 +51,7 @@ function GetData(){
     }
     for(y in backupData)
     {
-      document.getElementById("backups").innerHTML += '<li class="list-group-item">'+playerData[y].gamertag+' <a class="btn btn-sm btn-outline float-right" data-toggle="collapse" href="#b-'+ y +'" role="button" aria-expanded="false" aria-controls="collapseExample">DELETE</a></li><div class="collapse" id="b-'+ y +'"><div class="card card-body">Sure you want to delete?<a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + y +"'" + ','+"'"+'joined' + "'" + ')">DELETE</a></div></div>';
+      document.getElementById("backups").innerHTML += '<li class="list-group-item">'+backupData[y].gamertag+' <a class="btn btn-sm btn-outline float-right" data-toggle="collapse" href="#b-'+ y +'" role="button" aria-expanded="false" aria-controls="collapseExample">DELETE</a></li><div class="collapse" id="b-'+ y +'"><div class="card card-body">Sure you want to delete?<a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + y +"'" + ','+"'"+'joined' + "'" + ')">DELETE</a></div></div>';
     }
   });
 }
