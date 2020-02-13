@@ -145,7 +145,7 @@ function PlayerDelete(id, joinType)
 function EventDelete()
 {
   var ref = firebase.database().ref('/' + game + '/' + e).remove();
-  document.location.href="https://bmansayswhat.github.io/game-scheduler/current-events";
+  document.location.href="https://bmansayswhat.github.io/game-scheduler/index.html";
 }
 
 $('#deleteEvent').on('shown.bs.modal', function () {
