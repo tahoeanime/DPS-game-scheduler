@@ -47,6 +47,7 @@ function GetData(game){
           <li class="list-group-item"></li>
           <li class="list-group-item"><strong>Start:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</li>
           <li class="list-group-item"><strong>End:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</li>
+          <li class="list-group-item"><span class="badge badge-primary" id="playerCount">0/0</span><span class="badge badge-secondary" id="backupCount">0/0</span></li>
         </ul>
         <div class="card-body">
           <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary">View event</a>
@@ -58,6 +59,32 @@ function GetData(game){
       //Add to the html on the page
       document.getElementById("past-events").innerHTML += eventCard;
       console.log(eventData);
+
+      //Seperate out the players joined data from the data we already pulled
+      const playerData = eventData.joined;
+      const backupData = eventData.backups;
+
+      //Initialize a variable to count players
+      var playerCount = 0;
+
+      //Count the players
+      for(x in playerData)
+      {
+        playerCount++;
+      }
+
+      //Initialize a variable to count backups
+      var backupCount = 0;
+
+      //Count the backups
+      for(y in backupData)
+      {
+        backupCount++;
+      }
+
+      document.getElementById("playerCount").innerHTML = 'Players: ' + playerCount + '/' + eventData.openSpots;
+      document.getElementById("backupCount").innerHTML = 'Backups: ' + backupCount + '/' + eventData.backupSpots;
+
     });
   });
 }
