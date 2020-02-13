@@ -6,6 +6,7 @@ var month = d.getMonth() + 1; // Since getMonth() returns month from 0-11 not 1-
 var year = d.getFullYear();
 var dateStr = month + "/" + date + "/" + year;
 var yesterday = new Date(dateStr).getTime();
+var invYesterday = 0-yesterday;
 console.log(dateStr);
 
 //Get the selected game from the radio buttons on the page
@@ -29,7 +30,7 @@ function GetData(game){
   //Clear the html on the page
   document.getElementById("past-events").innerHTML = '';
   //Get the data from the database for the selected radio button
-  return database.ref('/' + game).orderByChild('startDateMil').endAt(yesterday).once('value', function(snapshot) {
+  return database.ref('/' + game).orderByChild('invStartDateMil').startAt(invYesterday).once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       //Store the data
       const eventData = childSnapshot.val();
