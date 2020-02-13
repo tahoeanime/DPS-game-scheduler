@@ -21,6 +21,9 @@ if (!Date.now) {
 
 // Function called when submit button is pressed
 function SubmitEvent() {
+
+  var complete = new Boolean(true);
+
   //Get the values of each form input and set as variables
   var gameRadios = document.getElementsByName('game-radios');
   for (var i = 0, length = gameRadios.length; i < length; i++) {
@@ -32,6 +35,11 @@ function SubmitEvent() {
     }
   }
   var title = document.getElementById("event-title").value;
+  if(title == '')
+  {
+    alert("add a title");
+    complete = false;
+  }
   var startDate = document.getElementById("start-date").value;
   var startTime = document.getElementById("start-time").value;
   var endDate = document.getElementById("end-date").value;
@@ -54,30 +62,31 @@ function SubmitEvent() {
   var startDateMil = new Date(startDate).getTime();
   var invStartDateMil = 0-startDateMil;
 
-  //Submit the form
-  // document.getElementById("new-event").submit();
+  //If the fields are all complete, add to the database
+  if(complete == true)
+  {
+    //Write the data to the database NOTE: push() updates and set() overwrites
+    var ref = firebase.database().ref().child(game).push({
+      game: game,
+      title: title,
+      startDate : startDate,
+      startTime : startTime,
+      endDate : endDate,
+      endTime : endTime,
+      timezone : timezone,
+      openSpots : openSpots,
+      backupSpots : backupSpots,
+      details : details,
+      gamertag : gamertag,
+      inverseDate : inverseDate,
+      playersJoined : 0,
+      playersBackup : 0,
+      startDateMil : startDateMil,
+      invStartDateMil : invStartDateMil
+    });
 
-  //Write the data to the database NOTE: push() updates and set() overwrites
-  var ref = firebase.database().ref().child(game).push({
-    game: game,
-    title: title,
-    startDate : startDate,
-    startTime : startTime,
-    endDate : endDate,
-    endTime : endTime,
-    timezone : timezone,
-    openSpots : openSpots,
-    backupSpots : backupSpots,
-    details : details,
-    gamertag : gamertag,
-    inverseDate : inverseDate,
-    playersJoined : 0,
-    playersBackup : 0,
-    startDateMil : startDateMil,
-    invStartDateMil : invStartDateMil
-  });
-
-  //set the form action to open the event details page which will show the data for the event
-  // document.getElementById("new-event").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
-  document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
+    //set the form action to open the event details page which will show the data for the event
+    // document.getElementById("new-event").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
+    document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
+  }
 }
