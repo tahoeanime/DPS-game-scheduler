@@ -67,27 +67,33 @@ function PlayerJoin() {
     }
   }
   var gamertag = document.getElementById("gamertag").value;
-
-  if(joinType == "main")
+  if(gamertag != "")
   {
-    //Add the gamertag to the joined branch
-    var ref = firebase.database().ref('/' + game + '/' + e + '/joined').push({
-      gamertag
-    });
-
-    // var ref = firebase.database().ref('/' + game + '/' + e).update({
-    //   playersJoined : players
-    // });
+    if(joinType == "main")
+    {
+      //Add the gamertag to the joined branch
+      var ref = firebase.database().ref('/' + game + '/' + e + '/joined').push({
+        gamertag
+      });
+    }
+    else if(joinType == "backup")
+    {
+      //Add the gamertag to the backups branch
+      var ref = firebase.database().ref('/' + game + '/' + e + '/backups').push({
+        gamertag
+      });
+    }
+    location.reload();
   }
-  else if(joinType == "backup")
-  {
-    //Add the gamertag to the backups branch
-    var ref = firebase.database().ref('/' + game + '/' + e + '/backups').push({
-      gamertag
-    });
+  else {
+    var element = document.getElementById("gamertag");
+    //Add the is-invalid class which makes the field red
+    element.classList.add("is-invalid");
+    //Check if the invalid-feeback class has already been added and if not, add it and the necessary html
+    if(element.parentElement.querySelector(".invalid-feedback") == null){
+      element.parentElement.innerHTML += '<div class="invalid-feedback">Provide your gamertag</div>';
+    }
   }
-  location.reload();
-  // document.getElementById("player-join").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+e +"&game="+game;
 }
 
 function PlayerDelete(id, joinType)
