@@ -26,14 +26,12 @@ function GetData(){
   const eventCard = `
     <div class="card">
       <h5 class="card-header">${eventData.title}</h5>
-      <div class="card-body">
-        <p class="card-text" id="event1">${eventData.details}</p>
-      </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"></li>
+        <li class="list-group-item">${eventData.details}</li>
         <li class="list-group-item"><strong>Players:</strong> ${eventData.openSpots}</li>
         <li class="list-group-item"><strong>Start time:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</li>
         <li class="list-group-item"><strong>End time:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</li>
+        <li class="list-group-item"><strong>Created by:</strong> ${eventData.gamertag}</li>
       </ul>
     </div>`;
 
