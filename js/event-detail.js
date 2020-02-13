@@ -66,7 +66,7 @@ function GetData(){
     {
       backupCount++;
       document.getElementById("backups").innerHTML += '<li class="list-group-item">'+backupData[y].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#b-'+ y +'" role="button" aria-expanded="false" aria-controls="collapseExample">Remove</a></li><div class="collapse" id="b-'+ y +'"><div class="card-body">Remove '+backupData[y].gamertag+'?<a href="" class="btn btn-sm btn-outline-danger float-right" onclick="PlayerDelete('+ "'" + y +"'" + ','+"'"+'backups' + "'" + ')">DELETE</a></div></div>';
-      document.getElementById("backupCount").innerHTML = 'Backups: ' + playerCount + '/' + eventData.backupSpots;
+      document.getElementById("backupCount").innerHTML = 'Backups: ' + backupCount + '/' + eventData.backupSpots;
     }
 
     console.log("Player count: " + playerCount);
@@ -85,6 +85,7 @@ function GetData(){
     if(playerCount == eventData.openSpots && backupCount == eventData.backupSpots)
     {
       document.getElementById("joinSubmit").disabled = true;
+      document.getElementById("gamertag").disabled = true;
     }
 
   });
@@ -101,7 +102,7 @@ function PlayerJoin() {
     }
   }
   var gamertag = document.getElementById("gamertag").value;
-  if(gamertag != "")
+  if(gamertag != "" && joinType != null)
   {
     if(joinType == "main")
     {
