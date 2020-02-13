@@ -40,8 +40,10 @@ function SubmitEvent() {
   {
     complete = false;
     var element = document.getElementById("event-title");
+    //Add the is-invalid class which makes the field red
     element.classList.add("is-invalid");
-    if(element.parentElement.querySelector(".invalid-feedback") != null){
+    //Check if the invalid-feeback class has already been added and if not, add it and the necessary html
+    if(element.parentElement.querySelector(".invalid-feedback") == null){
       element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event a title</div>';
     }
   }
