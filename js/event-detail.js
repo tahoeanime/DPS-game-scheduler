@@ -25,9 +25,11 @@ function GetData(){
   //The template we'll use for the event card
   const eventCard = `
     <div class="card">
-      <h5 class="card-header">${eventData.title}</h5>
+      <div class="card-body">
+        <h5 class="card-title">${eventData.title}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
+      </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">${eventData.details}</li>
         <li class="list-group-item"><strong>Players:</strong> ${eventData.openSpots}</li>
         <li class="list-group-item"><strong>Start time:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</li>
         <li class="list-group-item"><strong>End time:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</li>
