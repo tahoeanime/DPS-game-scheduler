@@ -141,3 +141,13 @@ function PlayerDelete(id, joinType)
   // document.getElementById("player-join").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+e +"&game="+game;
   location.reload();
 }
+
+function EventDelete()
+{
+  var ref = firebase.database().ref('/' + game + '/' + e).remove();
+  document.location.href="https://bmansayswhat.github.io/game-scheduler/current-events";
+}
+
+$('#deleteEvent').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
