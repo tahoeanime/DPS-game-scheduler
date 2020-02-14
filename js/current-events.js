@@ -30,70 +30,87 @@ function GetData(game){
   document.getElementById("events").innerHTML = '';
   //Get the data from the database for the selected radio button
   return database.ref('/' + game).orderByChild('startDateMil').startAt(today).once('value', function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-      //Store the data
-      const eventData = childSnapshot.val();
-      const eventKey = childSnapshot.key;
-      console.log(eventKey);
-      //The template we'll use for the data
-      const eventCard = `
+    if(snapshot.val() == null)
+    {
+      const noEvent = `
       <div class="card mt-4">
         <div class="card-body">
-          <h5 class="card-title">${eventData.title}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
+          <h5 class="card-title">No Upcoming Events</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Create an event</h6>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"></li>
-          <li class="list-group-item"><strong>Start:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</li>
-          <li class="list-group-item"><strong>End:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</li>
-          <li class="list-group-item"><span class="badge badge-success" id="playerCount-${eventKey}">0/0</span> <span class="badge badge-success" id="backupCount-${eventKey}">0/0</span></li>
-        </ul>
         <div class="card-body">
-          <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary">View event</a>
-        </div>
-        <div class="card-footer text-muted">
-        Created by: ${eventData.gamertag}
+          <a href="https://bmansayswhat.github.io/game-scheduler/new-event.html" class="btn btn-primary">New Event</a>
         </div>
       </div>`;
-      //Add to the html on the page
+
       document.getElementById("events").innerHTML += eventCard;
-      console.log(eventData);
+    }
+    else {
+      snapshot.forEach(function(childSnapshot) {
+        //Store the data
+        const eventData = childSnapshot.val();
+        const eventKey = childSnapshot.key;
+        console.log(eventKey);
+        //The template we'll use for the data
+        const eventCard = `
+        <div class="card mt-4">
+          <div class="card-body">
+            <h5 class="card-title">${eventData.title}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"></li>
+            <li class="list-group-item"><strong>Start:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</li>
+            <li class="list-group-item"><strong>End:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</li>
+            <li class="list-group-item"><span class="badge badge-success" id="playerCount-${eventKey}">0/0</span> <span class="badge badge-success" id="backupCount-${eventKey}">0/0</span></li>
+          </ul>
+          <div class="card-body">
+            <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary">View event</a>
+          </div>
+          <div class="card-footer text-muted">
+          Created by: ${eventData.gamertag}
+          </div>
+        </div>`;
+        //Add to the html on the page
+        document.getElementById("events").innerHTML += eventCard;
+        console.log(eventData);
 
-        //Seperate out the players joined data from the data we already pulled
-        const playerData = eventData.joined;
-        const backupData = eventData.backups;
+          //Seperate out the players joined data from the data we already pulled
+          const playerData = eventData.joined;
+          const backupData = eventData.backups;
 
-        //Initialize a variable to count players
-        var playerCount = 0;
+          //Initialize a variable to count players
+          var playerCount = 0;
 
-        //Count the players
-        for(x in playerData)
-        {
-          playerCount++;
-        }
+          //Count the players
+          for(x in playerData)
+          {
+            playerCount++;
+          }
 
-        //Initialize a variable to count backups
-        var backupCount = 0;
+          //Initialize a variable to count backups
+          var backupCount = 0;
 
-        //Count the backups
-        for(y in backupData)
-        {
-          backupCount++;
-        }
+          //Count the backups
+          for(y in backupData)
+          {
+            backupCount++;
+          }
 
-        //Update the player counts on the page
-        document.getElementById("playerCount-"+eventKey).innerHTML = 'Players: ' + playerCount + '/' + eventData.openSpots;
-        document.getElementById("backupCount-"+eventKey).innerHTML = 'Backups: ' + backupCount + '/' + eventData.backupSpots;
+          //Update the player counts on the page
+          document.getElementById("playerCount-"+eventKey).innerHTML = 'Players: ' + playerCount + '/' + eventData.openSpots;
+          document.getElementById("backupCount-"+eventKey).innerHTML = 'Backups: ' + backupCount + '/' + eventData.backupSpots;
 
-        //Change the color of the span based on the player counts
-        if(playerCount == eventData.openSpots)
-        {
-          document.getElementById("playerCount-"+eventKey).className = "badge badge-secondary";
-        }
-        if(backupCount == eventData.backupSpots)
-        {
-          document.getElementById("backupCount-"+eventKey).className = "badge badge-secondary";
-        }
-    });
+          //Change the color of the span based on the player counts
+          if(playerCount == eventData.openSpots)
+          {
+            document.getElementById("playerCount-"+eventKey).className = "badge badge-secondary";
+          }
+          if(backupCount == eventData.backupSpots)
+          {
+            document.getElementById("backupCount-"+eventKey).className = "badge badge-secondary";
+          }
+      });
+    }
   });
 }
