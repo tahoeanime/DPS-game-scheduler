@@ -51,28 +51,30 @@ function GetData(game){
         console.log(eventKey);
         //The template we'll use for the data
         const eventCard = `
-        <div class="col-lg-6">
-          <div class="card mt-4">
-            <div class="card-body">
-              <h5 class="card-title">${eventData.title}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
-              <div class="row mt-4">
-                <div class="col-lg"><strong>Start:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</div>
-                <div class="col-lg"><strong>End:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card mt-4">
+              <div class="card-body">
+                <h5 class="card-title">${eventData.title}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
+                <div class="row mt-4">
+                  <div class="col-lg"><strong>Start:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</div>
+                  <div class="col-lg"><strong>End:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</div>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><span class="badge badge-success" id="playerCount-${eventKey}">0/0</span> <span class="badge badge-success" id="backupCount-${eventKey}">0/0</span></li>
+              </ul>
+              <div class="card-body">
+                <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary">View event</a>
+              </div>
+              <div class="card-footer text-muted">
+              Created by: ${eventData.gamertag}
               </div>
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><span class="badge badge-success" id="playerCount-${eventKey}">0/0</span> <span class="badge badge-success" id="backupCount-${eventKey}">0/0</span></li>
-            </ul>
-            <div class="card-body">
-              <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary">View event</a>
-            </div>
-            <div class="card-footer text-muted">
-            Created by: ${eventData.gamertag}
-            </div>
           </div>
-        </div>
-        <div class="col-lg"
+          <div class="col-lg">
+          </div>
         </div>`;
         //Add to the html on the page
         document.getElementById("events").innerHTML += eventCard;
