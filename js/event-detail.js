@@ -25,16 +25,15 @@ function GetData(){
   //The template we'll use for the event card
   const eventCard = `
     <div class="card">
-      <h5 class="card-header bg-secondary text-white">${eventData.game}</h5>
+      <h5 class="card-header bg-dark text-white">${eventData.gameNice}</h5>
       <div class="card-body">
         <h5 class="card-title">${eventData.title}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
+        <div class="row mt-4">
+          <div class="col-lg"><strong>Start:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</div>
+          <div class="col-lg"><strong>End:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</div>
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"></li>
-        <li class="list-group-item"><strong>Start:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</li>
-        <li class="list-group-item"><strong>End:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</li>
-      </ul>
       <div class="card-footer text-muted">
       Created by: ${eventData.gamertag}
       </div>
