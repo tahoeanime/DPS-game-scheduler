@@ -38,8 +38,6 @@ function GetData(game){
         <div class="card-body">
           <h5 class="card-title">No Upcoming Events</h5>
           <h6 class="card-subtitle mb-2 text-muted">Create an event</h6>
-        </div>
-        <div class="card-body">
           <a href="https://bmansayswhat.github.io/game-scheduler/new-event.html" class="btn btn-primary">New Event</a>
         </div>
       </div>`;
