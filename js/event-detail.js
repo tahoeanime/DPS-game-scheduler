@@ -25,9 +25,7 @@ function GetData(){
   //The template we'll use for the event card
   const eventCard = `
     <div class="card">
-      <div class="card-header">
-      ${eventData.game}
-      </div>
+      <h5 class="card-header bg-secondary text-white">${eventData.game}</h5>
       <div class="card-body">
         <h5 class="card-title">${eventData.title}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>

@@ -35,6 +35,20 @@ function SubmitEvent() {
     }
   }
 
+  //Match to a nice name for the game so we can store it
+  var gameNice = "";
+  switch(game){
+    case "destiny-2":
+      gameNice = "Destiny 2";
+    break;
+    case "elder-scrolls":
+      gameNice = "Elder Scrolls";
+    break;
+    case "other":
+      gameNice = "Other";
+    break;
+  }
+
   var title = document.getElementById("event-title").value;
   if(title == '')
   {
@@ -150,6 +164,7 @@ function SubmitEvent() {
     //Write the data to the database NOTE: push() updates and set() overwrites
     var ref = firebase.database().ref().child(game).push({
       game: game,
+      gameNice: gameNice,
       title: title,
       startDate : startDate,
       startTime : startTime,
