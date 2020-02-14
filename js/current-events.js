@@ -30,6 +30,7 @@ function GetData(game){
   document.getElementById("events").innerHTML = '';
   //Get the data from the database for the selected radio button
   return database.ref('/' + game).orderByChild('startDateMil').startAt(today).once('value', function(snapshot) {
+    console.log(snapshot.val());
     if(snapshot.val() == null)
     {
       const noEvent = `
