@@ -44,7 +44,7 @@ function GetData(game){
         </div>
       </div>`;
 
-      document.getElementById("events").innerHTML += eventCard;
+      document.getElementById("events").innerHTML += noEvent;
     }
     else {
       snapshot.forEach(function(childSnapshot) {
