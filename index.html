@@ -31,28 +31,30 @@
   </nav>
   <div class="container">
     <h1 class="mt-4">Upcoming Events</h1>
-    <div class="col mt-4">
-      <fieldset class="form-group">
-        <!-- <legend class="col-form-label">Game</legend> -->
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="game-radios" value="destiny-2" id="destiny-2" checked onclick="GetGame()">
-          <label class="form-check-label" for="destiny-2">
-            Destiny 2
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="game-radios" value="elder-scrolls" id="elder-scrolls" onclick="GetGame()">
-          <label class="form-check-label" for="elder-scrolls">
-            Elder Scrolls Online
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="game-radios" value="other" id="other" onclick="GetGame()">
-          <label class="form-check-label" for="other">
-            Other
-          </label>
-        </div>
-      </fieldset>
+    <div class="row">
+      <div class="col mt-4">
+        <fieldset class="form-group">
+          <!-- <legend class="col-form-label">Game</legend> -->
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="game-radios" value="destiny-2" id="destiny-2" checked onclick="GetGame()">
+            <label class="form-check-label" for="destiny-2">
+              Destiny 2
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="game-radios" value="elder-scrolls" id="elder-scrolls" onclick="GetGame()">
+            <label class="form-check-label" for="elder-scrolls">
+              Elder Scrolls Online
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="game-radios" value="other" id="other" onclick="GetGame()">
+            <label class="form-check-label" for="other">
+              Other
+            </label>
+          </div>
+        </fieldset>
+      </div>
     </div>
   </div>
   <div class="container" id="events">
