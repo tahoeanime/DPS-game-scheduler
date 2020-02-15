@@ -54,7 +54,7 @@ function GetData(){
     for(x in playerData)
     {
       playerCount++;
-      document.getElementById("players").innerHTML += '<li class="list-group-item">'+playerData[x].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-'+ x +'" role="button" aria-expanded="false" aria-controls="collapseExample">Remove</a></li><div class="collapse" id="j-'+ x +'"><div class="card-body bg-danger text-white">Remove '+playerData[x].gamertag+'?<a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('+ "'" + x +"'" + ','+"'"+'joined' + "'" + ')">Confirm</a></div></div>';
+      document.getElementById("players").innerHTML += '<li class="list-group-item">'+playerData[x].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-'+ x +'" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fas-user-minus"></i></a></li><div class="collapse" id="j-'+ x +'"><div class="card-body bg-danger text-white">Remove '+playerData[x].gamertag+'?<a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('+ "'" + x +"'" + ','+"'"+'joined' + "'" + ')">Confirm</a></div></div>';
     }
 
     //Initialize a variable to count backups
@@ -64,7 +64,7 @@ function GetData(){
     for(y in backupData)
     {
       backupCount++;
-      document.getElementById("backups").innerHTML += '<li class="list-group-item">'+backupData[y].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#b-'+ y +'" role="button" aria-expanded="false" aria-controls="collapseExample">Remove</a></li><div class="collapse" id="b-'+ y +'"><div class="card-body bg-danger text-white">Remove '+backupData[y].gamertag+'?<a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('+ "'" + y +"'" + ','+"'"+'backups' + "'" + ')">Confirm</a></div></div>';
+      document.getElementById("backups").innerHTML += '<li class="list-group-item">'+backupData[y].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#b-'+ y +'" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fas-user-minus"></i></a></li><div class="collapse" id="b-'+ y +'"><div class="card-body bg-danger text-white">Remove '+backupData[y].gamertag+'?<a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('+ "'" + y +"'" + ','+"'"+'backups' + "'" + ')">Confirm</a></div></div>';
     }
 
     //Update the player and backup count on the page

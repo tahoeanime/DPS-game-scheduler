@@ -37,7 +37,7 @@ function GetData(game){
       <div class="card mt-4">
         <div class="card-body">
           <h5 class="card-title">No Upcoming Events</h5>
-          <a href="https://bmansayswhat.github.io/game-scheduler/new-event.html" class="btn btn-primary">New Event</a>
+          <a href="https://bmansayswhat.github.io/game-scheduler/new-event.html" class="btn btn-primary"><i class="fas fa-plus-circle"></i> New Event</a>
         </div>
       </div>`;
 
