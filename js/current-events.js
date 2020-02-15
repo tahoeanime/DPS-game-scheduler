@@ -66,7 +66,7 @@ function GetData(game){
                 <li class="list-group-item"><span class="badge badge-success" id="playerCount-${eventKey}">0/0</span> <span class="badge badge-success" id="backupCount-${eventKey}">0/0</span></li>
               </ul>
               <div class="card-body">
-                <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary">View event</a>
+                <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary btn-block">View event</a>
               </div>
               <div class="card-footer text-muted">
               Created by: ${eventData.gamertag}
