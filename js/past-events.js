@@ -49,10 +49,14 @@ function GetData(game){
                 <div class="col-lg"><strong>End:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</div>
               </div>
               <div class="row mt-4">
-              <span class="badge badge-success" id="playerCount-${eventKey}">0/0</span> <span class="badge badge-success" id="backupCount-${eventKey}">0/0</span>
+                <div class="col">
+                  <span class="badge badge-success" id="playerCount-${eventKey}">0/0</span> <span class="badge badge-success" id="backupCount-${eventKey}">0/0</span>
+                </div>
               </div>
               <div class="row mt-4">
-              <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary btn-block">View event</a>
+                <div class="col">
+                  <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary btn-block">View event</a>
+                </div>
               </div>
             </div>
             <div class="card-footer text-muted">
