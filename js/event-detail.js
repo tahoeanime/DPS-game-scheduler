@@ -68,8 +68,8 @@ function GetData(){
     }
 
     //Update the player and backup count on the page
-    document.getElementById("playerCount").innerHTML = 'Players: ' + playerCount + '/' + eventData.openSpots;
-    document.getElementById("backupCount").innerHTML = 'Backups: ' + backupCount + '/' + eventData.backupSpots;
+    document.getElementById("playerCount").innerHTML = playerCount + '/' + eventData.openSpots;
+    document.getElementById("backupCount").innerHTML = backupCount + '/' + eventData.backupSpots;
 
     console.log("Player count: " + playerCount);
     console.log("Backup count: " + backupCount);
