@@ -33,19 +33,7 @@
     <h1 class="mt-4">Event Detail</h1>
     <div class="row">
       <div class="col-lg mt-4" id="event">
-        <!-- <div class="col-md">
-        <div class="card">
-        <h5 class="card-header">Event Name</h5>
-        <div class="card-body">
-        <p class="card-text" id="event1">Event description</p>
-      </div>
-      <ul class="list-group list-group-flush">
-      <li class="list-group-item">Players:</li>
-      <li class="list-group-item">Start time:</li>
-      <li class="list-group-item">End time:</li>
-    </ul>
-  </div>
-</div> -->
+        <!-- EVENT DETAILS FILLED IN VIA JAVASCRIPT -->
     </div>
     <div class="col mt-4" id="join">
       <div class="card">
@@ -69,7 +57,7 @@
                 </label>
               </div>
             </fieldset>
-          <button type="submit" class="btn btn-primary" id="joinSubmit" onclick="PlayerJoin()"><i class="fas fa-user-minus"></i> Join</button>
+          <button type="submit" class="btn btn-primary" id="joinSubmit" onclick="PlayerJoin()">Join</button>
         </div>
       </div>
     </div>
@@ -77,7 +65,17 @@
   <div class="row">
     <div class="col-lg mt-4">
       <div class="card">
-        <h5 class="card-header bg-secondary text-white">Players</h5>
+        <div class="card-header bg-secondary text-white">
+          <div class="row">
+            <div class="col">
+              <h5>Players</h5>
+            </div>
+            <div class="col">
+              <i class="fas fa-users"></i> 4/4
+            </div>
+          </div>
+
+        </div>
         <ul class="list-group list-group-flush" id="players">
         </ul>
       </div>
