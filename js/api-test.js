@@ -140,6 +140,7 @@ function GetData(){
     var i = 0;
     function destinyImages() {
       var x = playerData[i];
+      console.log(x);
       if(playerData[i] != null)
       {
         //Get the player's destiny 2 emblem
