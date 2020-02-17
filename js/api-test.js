@@ -175,6 +175,7 @@ function GetData(){
         getEmblem();
       }
     }
+    forLoop();
 
     //Initialize a variable to count backups
     var backupCount = 0;
