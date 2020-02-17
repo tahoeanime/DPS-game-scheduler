@@ -1,13 +1,13 @@
 var apiKey = "031375cf97e14c8193046ff6912b17e9";
 
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://www.bungie.net/platform/Destiny/Manifest/InventoryItem/1274330687/", true);
+xhr.open("GET", "https://www.bungie.net/platform/User/SearchUsers/bmansayswhat", true);
 xhr.setRequestHeader("X-API-Key", apiKey);
 
 xhr.onreadystatechange = function(){
  if(this.readyState === 4 && this.status === 200){
   var json = JSON.parse(this.responseText);
-  console.log(json); //Gjallarhorn
+  console.log(json.Response.data.inventoryItem.itemName);
  }
 }
 
@@ -27,9 +27,6 @@ var game = d[1].substr(5); //The game name
 //just for testing purposes
 var e = '-M00ibRxHAVhqBgDWo_Q';
 var game = 'destiny-2';
-
-console.log(e);
-console.log(game);
 
 GetData();
 
