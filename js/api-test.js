@@ -1,40 +1,5 @@
+//Destiny api key
 var apiKey = "031375cf97e14c8193046ff6912b17e9";
-
-const getEmblem = async() => {
-  const response = await fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
-    headers:{
-      'X-API-KEY' : apiKey
-    }
-  })
-  const json = await response.json();
-  var memId = json.Response[0].membershipId;
-
-  const getProfiles = async() => {
-    const response1 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
-      headers:{
-        'X-API-KEY' : apiKey
-      }
-    })
-    const json1 = await response1.json();
-    memId = json1.Response.profiles[0].membershipId;
-
-    const getCharacters = async() => {
-      const response2 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
-        headers:{
-          'X-API-KEY' : apiKey
-        }
-      })
-      const json2 = await response2.json();
-      var d = json2.Response.characters;
-      const emblem = d.data[Object.keys(d.data)[0]].emblemPath;
-    }
-    getCharacters();
-  }
-  getProfiles();
-}
-getEmblem();
-
-console.log(emblem);
 
 // const getProfiles = async() => {
 //   const response1 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
@@ -171,8 +136,42 @@ function GetData(){
       `;
 
       document.getElementById("players").innerHTML += playerLine;
-      var emblem = document.getElementById("jimg-" + x);
-      console.log("jimg-" + x);
+
+      //Get the player's destiny 2 emblem
+      const getEmblem = async() => {
+        const response = await fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
+          headers:{
+            'X-API-KEY' : apiKey
+          }
+        })
+        const json = await response.json();
+        var memId = json.Response[0].membershipId;
+
+        const getProfiles = async() => {
+          const response1 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
+            headers:{
+              'X-API-KEY' : apiKey
+            }
+          })
+          const json1 = await response1.json();
+          memId = json1.Response.profiles[0].membershipId;
+
+          const getCharacters = async() => {
+            const response2 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
+              headers:{
+                'X-API-KEY' : apiKey
+              }
+            })
+            const json2 = await response2.json();
+            var d = json2.Response.characters;
+            var emblem = d.data[Object.keys(d.data)[0]].emblemPath;
+            document.getElementById("jimg-" + x).src = "https://www.bungie.net/" + emblem;
+          }
+          getCharacters();
+        }
+        getProfiles();
+      }
+      getEmblem();
 
       //Get the player's destiny profile
       // if(game == "destiny-2")
