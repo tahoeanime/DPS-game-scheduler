@@ -15,8 +15,8 @@ xhr.setRequestHeader("X-API-Key", apiKey);
 
 xhr.send();
 
-var json = JSON.parse(xhr.responseText); 
-console.log(json);
+// var json = JSON.parse(xhr.responseText); 
+console.log(xhr.responseText);
 
 var g = new XMLHttpRequest();
 g.open("GET", "https://www.bungie.net/platform/Destiny2/1/Profile/" + memId + "/LinkedProfiles/", true);
