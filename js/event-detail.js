@@ -54,17 +54,39 @@ function GetData(){
     for(x in playerData)
     {
       playerCount++;
-      document.getElementById("players").innerHTML += '<li class="list-group-item">'+playerData[x].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-'+ x +'" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-minus"></i></a></li><div class="collapse" id="j-'+ x +'"><div class="card-body bg-danger text-white clearfix"><span class="align-middle">Remove '+playerData[x].gamertag+'?</span><a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('+ "'" + x +"'" + ','+"'"+'joined' + "'" + ')">Confirm</a></div></div>';
+      const playerLine = `
+      <li class="list-group-item">
+        ${playerData[x].gamertag} <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-${x}" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-minus"></i></a>
+      </li>
+      <div class="collapse" id="j-${x}">
+        <div class="card-body bg-danger text-white clearfix">
+          <span class="align-middle">Remove ${playerData[x].gamertag}?</span><a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('${x}','joined')">Confirm</a>
+        </div>
+      </div>
+      `;
+
+      document.getElementById("players").innerHTML += playerLine;
     }
 
     //Initialize a variable to count backups
     var backupCount = 0;
 
     //Add to the html on the page
-    for(y in backupData)
+    for(x in backupData)
     {
       backupCount++;
-      document.getElementById("backups").innerHTML += '<li class="list-group-item">'+backupData[y].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#b-'+ y +'" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-minus"></i></a></li><div class="collapse" id="b-'+ y +'"><div class="card-body bg-danger text-white clearfix"><span class="align-middle">Remove '+backupData[y].gamertag+'?</span><a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('+ "'" + y +"'" + ','+"'"+'backups' + "'" + ')">Confirm</a></div></div>';
+      const backupLine = `
+      <li class="list-group-item">
+        ${backupData[x].gamertag} <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-${x}" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-minus"></i></a>
+      </li>
+      <div class="collapse" id="j-${x}">
+        <div class="card-body bg-danger text-white clearfix">
+          <span class="align-middle">Remove ${backupData[x].gamertag}?</span><a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('${x}','backups')">Confirm</a>
+        </div>
+      </div>
+      `;
+
+      document.getElementById("backups").innerHTML += backupLine;
     }
 
     //Update the player and backup count on the page
