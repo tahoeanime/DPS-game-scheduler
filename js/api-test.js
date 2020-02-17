@@ -15,7 +15,7 @@ xhr.onreadystatechange = function(){
 
 xhr.send();
 
-console.log("id: " + JSON.parse(xhr.responseText).Response[0].membershipId);
+console.log(JSON.parse(xhr.responseText));
 
 var g = new XMLHttpRequest();
 g.open("GET", "https://www.bungie.net/platform/Destiny2/1/Profile/" + memId + "/LinkedProfiles/", true);
