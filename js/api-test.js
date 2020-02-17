@@ -1,22 +1,32 @@
 var apiKey = "031375cf97e14c8193046ff6912b17e9";
 var memId = "";
 
+fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
+    headers:{
+      'X-API-KEY' : apiKey
+    }
+  })
+  .then((response) => {
+    return response.json();
+  })
+  .then((myJson) => {
+    console.log(myJson);
+  });
+
+/*
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat", true);
 xhr.setRequestHeader("X-API-Key", apiKey);
 
-// xhr.onreadystatechange = function(){
-//  if(this.readyState === 4 && this.status === 200){
-//   var json = JSON.parse(this.responseText);
-//   memId = json.Response[0].membershipId;
-//   console.log(json.Response[0]);
-//  }
-// }
+xhr.onreadystatechange = function(){
+ if(this.readyState === 4 && this.status === 200){
+  var json = JSON.parse(this.responseText);
+  memId = json.Response[0].membershipId;
+  console.log(json.Response[0]);
+ }
+}
 
 xhr.send();
-
-// var json = JSON.parse(xhr.responseText); 
-console.log(xhr.responseText);
 
 var g = new XMLHttpRequest();
 g.open("GET", "https://www.bungie.net/platform/Destiny2/1/Profile/" + memId + "/LinkedProfiles/", true);
@@ -29,6 +39,7 @@ g.onreadystatechange = function(){
 }
 
 g.send();
+*/
 
 /*
 //Get the current URL
