@@ -1,6 +1,5 @@
 var apiKey = "031375cf97e14c8193046ff6912b17e9";
 
-var emblem = "";
 const getEmblem = async() => {
   const response = await fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
     headers:{
@@ -27,7 +26,7 @@ const getEmblem = async() => {
       })
       const json2 = await response2.json();
       var d = json2.Response.characters;
-      emblem = d.data[Object.keys(d.data)[0]].emblemPath;
+      const emblem = d.data[Object.keys(d.data)[0]].emblemPath;
     }
     getCharacters();
   }
