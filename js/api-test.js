@@ -11,7 +11,7 @@ fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
   })
   .then((myJson) => {
     memId = myJson.Response[0].membershipId;
-    consol.log("id: " + memId);
+    console.log("id: " + memId);
   });
 
   console.log("id: " + memId);
