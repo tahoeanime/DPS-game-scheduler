@@ -18,7 +18,7 @@ xhr.onreadystatechange = function(){
 xhr.send();
 
 var g = new XMLHttpRequest();
-g.open("GET", "https://www.bungie.net/platform/Destiny2/1/Profile/" + memId, true);
+g.open("GET", "https://www.bungie.net/platform/Destiny2/254/Profile/" + memId + "/LinkedProfiles/", true);
 g.setRequestHeader("X-API-Key", apiKey);
 
 g.onreadystatechange = function(){
