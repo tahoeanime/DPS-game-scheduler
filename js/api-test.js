@@ -1,5 +1,7 @@
 var apiKey = "031375cf97e14c8193046ff6912b17e9";
 
+var memId = "";
+
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat", true);
 xhr.setRequestHeader("X-API-Key", apiKey);
@@ -7,7 +9,7 @@ xhr.setRequestHeader("X-API-Key", apiKey);
 xhr.onreadystatechange = function(){
  if(this.readyState === 4 && this.status === 200){
   var json = JSON.parse(this.responseText);
-  var memId = json.Response[0].membershipId;
+  memId = json.Response[0].membershipId;
   console.log(json.Response[0]);
   console.log(memId);
  }
