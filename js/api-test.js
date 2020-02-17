@@ -8,7 +8,7 @@ const getMemId = async() => {
   })
   const json = await response.json();
   return json;
-  debug.log(json);
+  console.log(json);
 }
 var memObject = getMemId();
 console.log(memObject);
