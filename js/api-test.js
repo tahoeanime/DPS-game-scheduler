@@ -7,7 +7,9 @@ xhr.setRequestHeader("X-API-Key", apiKey);
 xhr.onreadystatechange = function(){
  if(this.readyState === 4 && this.status === 200){
   var json = JSON.parse(this.responseText);
+  var memId = json.Response[0].membershipId;
   console.log(json.Response[0]);
+  console.log(memId);
  }
 }
 
