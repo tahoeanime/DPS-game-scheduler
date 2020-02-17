@@ -106,7 +106,7 @@ function GetData(){
         </div>
       </div>
       `;
-      
+
       document.getElementById("players").innerHTML += playerLine;
     }
 
@@ -123,7 +123,7 @@ function GetData(){
       </li>
       <div class="collapse" id="j-${x}">
         <div class="card-body bg-danger text-white clearfix">
-          <span class="align-middle">Remove ${backupData[x].gamertag}?</span><a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('${x}','joined')">Confirm</a>
+          <span class="align-middle">Remove ${backupData[x].gamertag}?</span><a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('${x}','backups')">Confirm</a>
         </div>
       </div>
       `;
