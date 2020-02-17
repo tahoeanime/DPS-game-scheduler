@@ -6,25 +6,21 @@ xhr.open("GET", "https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat
 xhr.setRequestHeader("X-API-Key", apiKey);
 
 xhr.onreadystatechange = function(){
- if(this.readyState === 4 && this.status === 200){
   var json = JSON.parse(this.responseText);
-  let memId = json.Response[0].membershipId;
+  memId = json.Response[0].membershipId;
   console.log(json.Response[0]);
- }
 }
 
 xhr.send();
 
-console.log(memId);
+console.log("memId is: " + memId);
 
 var g = new XMLHttpRequest();
 g.open("GET", "https://www.bungie.net/platform/Destiny2/1/Profile/" + memId + "/LinkedProfiles/", true);
 g.setRequestHeader("X-API-Key", apiKey);
 
 g.onreadystatechange = function(){
- if(this.readyState === 4 && this.status === 200){
   var json = JSON.parse(this.responseText);
- }
 }
 
 g.send();
