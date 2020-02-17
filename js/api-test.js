@@ -15,6 +15,18 @@ xhr.onreadystatechange = function(){
 
 xhr.send();
 
+var g = new XMLHttpRequest();
+g.open("GET", "https://www.bungie.net/platform/Destiny2/1/Profile/" + memId, true);
+g.setRequestHeader("X-API-Key", apiKey);
+
+g.onreadystatechange = function(){
+ if(this.readyState === 4 && this.status === 200){
+  var json = JSON.parse(this.responseText);
+ }
+}
+
+xhr.send();
+
 /*
 //Get the current URL
 var url = window.location.href;
