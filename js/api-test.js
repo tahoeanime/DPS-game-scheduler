@@ -13,25 +13,25 @@ var memObject = getMemId();
 var memId = memObject.Response[0].membershipId;
 
 const getProfiles = async() => {
-  const response = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
+  const response1 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
     headers:{
       'X-API-KEY' : apiKey
     }
   })
-  const json = await response.json();
-  return json;
+  const json1 = await response1.json();
+  return json1;
 }
 var profiles = getProfiles();
 memId = profile.Response.profiles[0].membershipId;
 
 const getCharacters = async() => {
-  const response = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
+  const response2 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
     headers:{
       'X-API-KEY' : apiKey
     }
   })
-  const json = await response.json();
-  return json;
+  const json2 = await response2.json();
+  return json2;
 }
 var characters = getCharacters();
 var d = destinyProfile.Response.characters;
