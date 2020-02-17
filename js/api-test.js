@@ -5,17 +5,18 @@ var xhr = new XMLHttpRequest();
 xhr.open("GET", "https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat", true);
 xhr.setRequestHeader("X-API-Key", apiKey);
 
-xhr.onreadystatechange = function(){
- if(this.readyState === 4 && this.status === 200){
-  var json = JSON.parse(this.responseText);
-  memId = json.Response[0].membershipId;
-  console.log(json.Response[0]);
- }
-}
+// xhr.onreadystatechange = function(){
+//  if(this.readyState === 4 && this.status === 200){
+//   var json = JSON.parse(this.responseText);
+//   memId = json.Response[0].membershipId;
+//   console.log(json.Response[0]);
+//  }
+// }
 
 xhr.send();
 
-console.log(JSON.parse(xhr.responseText));
+var json = JSON.parse(xhr.responseText); 
+console.log(json);
 
 var g = new XMLHttpRequest();
 g.open("GET", "https://www.bungie.net/platform/Destiny2/1/Profile/" + memId + "/LinkedProfiles/", true);
