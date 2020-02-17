@@ -23,7 +23,7 @@ fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
       .then((profile) => {
         memId = profile.Response.profiles[0].membershipId;
         //Get the data from the first of the player's linked Destiny profiles
-        fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId,{
+        fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Profiles,Characters,CharacterProgressions',{
             headers:{
               'X-API-KEY' : apiKey
             }
