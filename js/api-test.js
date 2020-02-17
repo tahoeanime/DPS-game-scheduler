@@ -168,7 +168,7 @@ function GetData(){
               const json2 = await response2.json();
               var d = json2.Response.characters;
               var emblem = d.data[Object.keys(d.data)[0]].emblemPath;
-              document.getElementById("jimg-" + x).src = "https://www.bungie.net/" + emblem;
+              await document.getElementById("jimg-" + x).src = "https://www.bungie.net/" + emblem;
             }
             getCharacters();
           }
