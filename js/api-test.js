@@ -11,10 +11,18 @@ fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
   })
   .then((myJson) => {
     memId = myJson.Response[0].membershipId;
-    console.log("id: " + memId);
+    fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
+        headers:{
+          'X-API-KEY' : apiKey
+        }
+      })
+      .then((response) => {
+        return response.json();
+      })
+      .then((profile) => {
+        console.log(profile);
+      })
   });
-
-  console.log("id: " + memId);
 
 /*
 var xhr = new XMLHttpRequest();
