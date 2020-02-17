@@ -13,7 +13,7 @@ xhr.onreadystatechange = function(){
 
 xhr.send();
 
-
+/*
 //Get the current URL
 var url = window.location.href;
 //Split the URL
@@ -22,10 +22,11 @@ var d = v[1].split("&");
 //Trim off the identifiers and store as variable
 var e = d[0].substr(2); //The event key
 var game = d[1].substr(5); //The game name
+*/
 
 //just for testing purposes
-e = '-M00ibRxHAVhqBgDWo_Q';
-game = 'destiny-2';
+var e = '-M00ibRxHAVhqBgDWo_Q';
+var game = 'destiny-2';
 
 console.log(e);
 console.log(game);
