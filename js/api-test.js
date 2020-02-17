@@ -10,6 +10,7 @@ const getMemId = async() => {
   return json;
 }
 var memObject = getMemId();
+console.log(memObject);
 var memId = memObject.Response[0].membershipId;
 
 const getProfiles = async() => {
