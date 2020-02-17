@@ -10,8 +10,10 @@ fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
     return response.json();
   })
   .then((myJson) => {
-    console.log(myJson);
+    memId = myJson.Response[0].membershipId;
   });
+
+  console.log("id: " + memId);
 
 /*
 var xhr = new XMLHttpRequest();
