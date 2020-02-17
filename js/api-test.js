@@ -137,8 +137,10 @@ function GetData(){
 
       document.getElementById("players").innerHTML += playerLine;
     }
-    const forLoop = async _ => {
-      for(x in playerData)
+    var i = 0;
+    function destinyImages() {
+      var x = playerData[i];
+      if(playerData[i] != null)
       {
         //Get the player's destiny 2 emblem
         const getEmblem = async() => {
@@ -168,7 +170,8 @@ function GetData(){
               const json2 = await response2.json();
               var d = json2.Response.characters;
               var emblem = d.data[Object.keys(d.data)[0]].emblemPath;
-              await document.getElementById("jimg-" + x).src = "https://www.bungie.net/" + emblem;
+              document.getElementById("jimg-" + x).src = "https://www.bungie.net/" + emblem;
+              i++;
             }
             getCharacters();
           }
@@ -176,8 +179,11 @@ function GetData(){
         }
         getEmblem();
       }
+      else {
+        return;
+      }
     }
-    forLoop();
+    destinyImages();
 
     //Initialize a variable to count backups
     var backupCount = 0;
