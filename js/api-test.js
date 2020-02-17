@@ -2,7 +2,7 @@ var apiKey = "031375cf97e14c8193046ff6912b17e9";
 var memId = "";
 
 const request = async() => {
-  const response = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
+  const response = await fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
     headers:{
       'X-API-KEY' : apiKey
     }
