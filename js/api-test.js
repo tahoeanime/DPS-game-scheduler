@@ -11,6 +11,7 @@ fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
   })
   .then((myJson) => {
     memId = myJson.Response[0].membershipId;
+    //Get the player's linked Destiny profiles
     fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
         headers:{
           'X-API-KEY' : apiKey
@@ -20,7 +21,19 @@ fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
         return response.json();
       })
       .then((profile) => {
-        console.log(profile);
+        memId = profile.Response.profiles[0].membershipId;
+        //Get the data from the first of the player's linked Destiny profiles
+        fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId,{
+            headers:{
+              'X-API-KEY' : apiKey
+            }
+          })
+          .then((response) => {
+            return response.json();
+          })
+          .then((destinyProfile) => {
+            console.log(destinyProfile);
+          })
       })
   });
 
