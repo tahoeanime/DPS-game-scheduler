@@ -2,40 +2,40 @@ var apiKey = "031375cf97e14c8193046ff6912b17e9";
 var memId = "";
 
 fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
-    headers:{
-      'X-API-KEY' : apiKey
-    }
-  })
-  .then((response) => {
-    return response.json();
-  })
-  .then((myJson) => {
-    memId = myJson.Response[0].membershipId;
-    //Get the player's linked Destiny profiles
-    fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
-        headers:{
-          'X-API-KEY' : apiKey
-        }
-      })
-      .then((response) => {
-        return response.json();
-      })
-      .then((profile) => {
-        memId = profile.Response.profiles[0].membershipId;
-        //Get the data from the first of the player's linked Destiny profiles
-        fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
-            headers:{
-              'X-API-KEY' : apiKey
-            }
-          })
-          .then((response) => {
-            return response.json();
-          })
-          .then((destinyProfile) => {
-            console.log(destinyProfile.Response.characters.data);
-          })
-      })
-  });
+  headers:{
+    'X-API-KEY' : apiKey
+  }
+})
+.then((response) => {
+  return response.json();
+})
+.then((myJson) => {
+  memId = myJson.Response[0].membershipId;
+  //Get the player's linked Destiny profiles
+  fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
+      headers:{
+        'X-API-KEY' : apiKey
+      }
+    })
+    .then((response) => {
+      return response.json();
+    })
+    .then((profile) => {
+      memId = profile.Response.profiles[0].membershipId;
+      //Get the data from the first of the player's linked Destiny profiles
+      fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
+          headers:{
+            'X-API-KEY' : apiKey
+          }
+        })
+        .then((response) => {
+          return response.json();
+        })
+        .then((destinyProfile) => {
+          console.log(destinyProfile.Response.characters.data);
+        })
+    })
+});
 
 /*
 //Get the current URL
@@ -96,6 +96,60 @@ function GetData(){
     for(x in playerData)
     {
       playerCount++;
+
+      //Get the player's destiny profile
+      if(game == "destiny-2")
+      {
+        fetch('https://www.bungie.net/platform/User/SearchUsers?q='+playerData[x].gamertag,{
+          headers:{
+            'X-API-KEY' : apiKey
+          }
+        })
+        .then((response) => {
+          return response.json();
+        })
+        .then((myJson) => {
+          memId = myJson.Response[0].membershipId;
+          //Get the player's linked Destiny profiles
+          fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
+              headers:{
+                'X-API-KEY' : apiKey
+              }
+            })
+            .then((response) => {
+              return response.json();
+            })
+            .then((profile) => {
+              memId = profile.Response.profiles[0].membershipId;
+              //Get the data from the first of the player's linked Destiny profiles
+              fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
+                  headers:{
+                    'X-API-KEY' : apiKey
+                  }
+                })
+                .then((response) => {
+                  return response.json();
+                })
+                .then((destinyProfile) => {
+                  console.log(destinyProfile.Response.characters.data);
+                  var dprofile = destinyProfile.Response.characters.data[0];
+                  const playerLine = `
+                  <li class="list-group-item">
+                    ${playerData[x].gamertag} <img src="http://www.bungie.net/${dprofile.emblemPath}"><a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-${x}" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-minus"></i></a>
+                  </li>
+                  <div class="collapse" id="j-${x}">
+                    <div class="card-body bg-danger text-white clearfix">
+                      <span class="align-middle">Remove ${playerData[x].gamertag}?</span><a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('${x}','joined')">Confirm</a>
+                    </div>
+                  </div>
+                  `;
+
+                  document.getElementById("players").innerHTML += playerLine;
+                })
+            })
+        });
+      }
+
       const playerLine = `
       <li class="list-group-item">
         ${playerData[x].gamertag} <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-${x}" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-minus"></i></a>
