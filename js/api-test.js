@@ -1,7 +1,7 @@
 var apiKey = "031375cf97e14c8193046ff6912b17e9";
 
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://www.bungie.net/platform/User/GetBungieNetUserById/bmansayswhat", true);
+xhr.open("GET", "https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat", true);
 xhr.setRequestHeader("X-API-Key", apiKey);
 
 xhr.onreadystatechange = function(){
