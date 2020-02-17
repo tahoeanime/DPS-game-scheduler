@@ -158,16 +158,16 @@ function GetData(){
     var backupCount = 0;
 
     //Add to the html on the page
-    for(x in backupData)
+    for(y in backupData)
     {
       backupCount++;
       const backupLine = `
       <li class="list-group-item">
-        ${backupData[x].gamertag} <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-${x}" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-minus"></i></a>
+        ${backupData[y].gamertag} <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-${y}" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-minus"></i></a>
       </li>
-      <div class="collapse" id="j-${x}">
+      <div class="collapse" id="j-${y}">
         <div class="card-body bg-danger text-white clearfix">
-          <span class="align-middle">Remove ${backupData[x].gamertag}?</span><a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('${x}','backups')">Confirm</a>
+          <span class="align-middle">Remove ${backupData[y].gamertag}?</span><a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('${y}','backups')">Confirm</a>
         </div>
       </div>
       `;
