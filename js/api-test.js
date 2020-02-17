@@ -99,7 +99,7 @@ function GetData(){
 
       const playerLine = `
       <li class="list-group-item">
-        ${playerData[x].gamertag} <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-${x}" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-minus"></i></a>
+        ${playerData[x].gamertag} <img src="" id="jimg-${x}"><a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-${x}" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-minus"></i></a>
       </li>
       <div class="collapse" id="j-${x}">
         <div class="card-body bg-danger text-white clearfix">
@@ -145,6 +145,7 @@ function GetData(){
                 })
                 .then((destinyProfile) => {
                   console.log(destinyProfile.Response.characters.data);
+                  console.log("firebase id: " + x);
                   // document.getElementById("players").innerHTML += playerLine;
                 })
             })
