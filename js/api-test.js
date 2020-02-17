@@ -1,21 +1,44 @@
 var apiKey = "031375cf97e14c8193046ff6912b17e9";
-var memId = "";
 
-const request = async() => {
+const getMemId = async() => {
   const response = await fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
     headers:{
       'X-API-KEY' : apiKey
     }
   })
   const json = await response.json();
-  console.log(json);
   return json;
 }
+var memObject = getMemId();
+var memId = memObject.Response[0].membershipId;
 
-request();
-var memberId = request();
-console.log(memberId);
+const getProfiles = async() => {
+  const response = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
+    headers:{
+      'X-API-KEY' : apiKey
+    }
+  })
+  const json = await response.json();
+  return json;
+}
+var profiles = getProfiles();
+memId = profile.Response.profiles[0].membershipId;
 
+const getCharacters = async() => {
+  const response = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
+    headers:{
+      'X-API-KEY' : apiKey
+    }
+  })
+  const json = await response.json();
+  return json;
+}
+var characters = getCharacters();
+var d = destinyProfile.Response.characters;
+var dProfile = d.data[Object.keys(d.data)[0]];
+console.log(dProfile);
+
+/*
 fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
   headers:{
     'X-API-KEY' : apiKey
@@ -51,7 +74,7 @@ fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
         })
     })
 });
-
+*/
 /*
 //Get the current URL
 var url = window.location.href;
@@ -128,47 +151,47 @@ function GetData(){
       console.log("jimg-" + x);
 
       //Get the player's destiny profile
-      if(game == "destiny-2")
-      {
-        fetch('https://www.bungie.net/platform/User/SearchUsers?q='+playerData[x].gamertag,{
-          headers:{
-            'X-API-KEY' : apiKey
-          }
-        })
-        .then((response) => {
-          return response.json();
-        })
-        .then((myJson) => {
-          memId = myJson.Response[0].membershipId;
-          //Get the player's linked Destiny profiles
-          fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
-              headers:{
-                'X-API-KEY' : apiKey
-              }
-            })
-            .then((response) => {
-              return response.json();
-            })
-            .then((profile) => {
-              memId = profile.Response.profiles[0].membershipId;
-              //Get the data from the first of the player's linked Destiny profiles
-              fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
-                  headers:{
-                    'X-API-KEY' : apiKey
-                  }
-                })
-                .then((response) => {
-                  return response.json();
-                })
-                .then((destinyProfile) => {
-                  var d = destinyProfile.Response.characters;
-                  var dProfile = d.data[Object.keys(d.data)[0]];
-                  // console.log("jimg-" + x);
-                  emblem.src = "https://www.bungie.net/"+dProfile.emblemPath;
-                })
-            })
-        });
-      }
+      // if(game == "destiny-2")
+      // {
+      //   fetch('https://www.bungie.net/platform/User/SearchUsers?q='+playerData[x].gamertag,{
+      //     headers:{
+      //       'X-API-KEY' : apiKey
+      //     }
+      //   })
+      //   .then((response) => {
+      //     return response.json();
+      //   })
+      //   .then((myJson) => {
+      //     memId = myJson.Response[0].membershipId;
+      //     //Get the player's linked Destiny profiles
+      //     fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
+      //         headers:{
+      //           'X-API-KEY' : apiKey
+      //         }
+      //       })
+      //       .then((response) => {
+      //         return response.json();
+      //       })
+      //       .then((profile) => {
+      //         memId = profile.Response.profiles[0].membershipId;
+      //         //Get the data from the first of the player's linked Destiny profiles
+      //         fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
+      //             headers:{
+      //               'X-API-KEY' : apiKey
+      //             }
+      //           })
+      //           .then((response) => {
+      //             return response.json();
+      //           })
+      //           .then((destinyProfile) => {
+      //             var d = destinyProfile.Response.characters;
+      //             var dProfile = d.data[Object.keys(d.data)[0]];
+      //             // console.log("jimg-" + x);
+      //             emblem.src = "https://www.bungie.net/"+dProfile.emblemPath;
+      //           })
+      //       })
+      //   });
+      // }
     }
 
     //Initialize a variable to count backups
