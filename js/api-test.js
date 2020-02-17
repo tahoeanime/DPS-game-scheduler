@@ -109,6 +109,7 @@ function GetData(){
       `;
 
       document.getElementById("players").innerHTML += playerLine;
+      emblem = document.getElementById("jimg-" + x);
 
       //Get the player's destiny profile
       if(game == "destiny-2")
@@ -147,7 +148,7 @@ function GetData(){
                   var d = destinyProfile.Response.characters;
                   var dProfile = d.data[Object.keys(d.data)[0]];
                   console.log("jimg-" + x);
-                  document.getElementById("jimg-" + x).src = "http://www.bungie.net/"+dProfile.emblemPath;
+                  emblem.src = "https://www.bungie.net/"+dProfile.emblemPath;
                 })
             })
         });
