@@ -27,7 +27,7 @@ g.onreadystatechange = function(){
  }
 }
 
-xhr.send();
+g.send();
 
 /*
 //Get the current URL
