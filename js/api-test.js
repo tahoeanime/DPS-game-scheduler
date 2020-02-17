@@ -148,6 +148,7 @@ function GetData(){
                   // console.log(destinyProfile.Response.characters.data);
                   // console.log("firebase id: " + x);
                   console.log(dprofile.data[0]);
+                  console.log(Object.keys(dprofile)[0]);
                   document.getElementById("jimg-"+x).src = "http://www.bungie.net/"+dprofile.emblemPath;
                 })
             })
