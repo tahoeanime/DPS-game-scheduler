@@ -8,7 +8,6 @@ const getEmblem = async() => {
   })
   const json = await response.json();
   var memId = json.Response[0].membershipId;
-  getProfiles();
 
   const getProfiles = async() => {
     const response1 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
@@ -18,7 +17,6 @@ const getEmblem = async() => {
     })
     const json1 = await response1.json();
     memId = json1.Response.profiles[0].membershipId;
-    getCharacters();
 
     const getCharacters = async() => {
       const response2 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
@@ -31,7 +29,9 @@ const getEmblem = async() => {
       var dProfile = d.data[Object.keys(d.data)[0]];
       console.log(dProfile);
     }
+    getCharacters();
   }
+  getProfiles();
 }
 getEmblem();
 
