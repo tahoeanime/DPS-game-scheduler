@@ -145,7 +145,7 @@ function GetData(){
                 })
                 .then((destinyProfile) => {
                   var d = destinyProfile.Response.characters;
-                  var dProfile = d.data[Object.keys(d.data)[0]]);
+                  var dProfile = d.data[Object.keys(d.data)[0]];
                   document.getElementById("jimg-"+x).src = "http://www.bungie.net/"+dprofile.emblemPath;
                 })
             })
