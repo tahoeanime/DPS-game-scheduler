@@ -32,7 +32,7 @@ fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
           return response.json();
         })
         .then((destinyProfile) => {
-          console.log(destinyProfile.Response.characters.data);
+          // console.log(destinyProfile.Response.characters.data);
         })
     })
 });
@@ -147,6 +147,7 @@ function GetData(){
                   var dprofile = destinyProfile.Response.characters.data[0];
                   // console.log(destinyProfile.Response.characters.data);
                   // console.log("firebase id: " + x);
+                  console.log(dprofile);
                   document.getElementById("jimg-"+x).src = "http://www.bungie.net/"+dprofile.emblemPath;
                 })
             })
