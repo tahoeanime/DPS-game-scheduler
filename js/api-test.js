@@ -144,9 +144,10 @@ function GetData(){
                   return response.json();
                 })
                 .then((destinyProfile) => {
-                  console.log(destinyProfile.Response.characters.data);
-                  console.log("firebase id: " + x);
-                  // document.getElementById("players").innerHTML += playerLine;
+                  var dprofile = destinyProfile.Response.characters.data[0];
+                  // console.log(destinyProfile.Response.characters.data);
+                  // console.log("firebase id: " + x);
+                  document.getElementById("jimg-"+x).src = "http://www.bungie.net/"+dprofile.emblemPath;
                 })
             })
         });
