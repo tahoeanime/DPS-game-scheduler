@@ -1,5 +1,6 @@
 var apiKey = "031375cf97e14c8193046ff6912b17e9";
 
+var emblem = "";
 const getEmblem = async() => {
   const response = await fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
     headers:{
@@ -26,14 +27,15 @@ const getEmblem = async() => {
       })
       const json2 = await response2.json();
       var d = json2.Response.characters;
-      var dProfile = d.data[Object.keys(d.data)[0]];
-      console.log(dProfile);
+      emblem = d.data[Object.keys(d.data)[0]].emblemPath;
     }
     getCharacters();
   }
   getProfiles();
 }
 getEmblem();
+
+console.log(emblem);
 
 // const getProfiles = async() => {
 //   const response1 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
