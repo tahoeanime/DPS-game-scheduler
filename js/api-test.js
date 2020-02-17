@@ -120,7 +120,6 @@ function GetData(){
     var playerCount = 0;
 
     //Add to the html on the page
-    const forLoop = async _ => {
       for(x in playerData)
       {
         playerCount++;
@@ -137,45 +136,48 @@ function GetData(){
         `;
 
         document.getElementById("players").innerHTML += playerLine;
-
-        //Get the player's destiny 2 emblem
-        const getEmblem = async() => {
-          const response = await fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
-            headers:{
-              'X-API-KEY' : apiKey
-            }
-          })
-          const json = await response.json();
-          var memId = json.Response[0].membershipId;
-
-          const getProfiles = async() => {
-            const response1 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
+      }
+      const forLoop = async _ => {
+        for(x in playerData)
+        {
+          //Get the player's destiny 2 emblem
+          const getEmblem = async() => {
+            const response = await fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
               headers:{
                 'X-API-KEY' : apiKey
               }
             })
-            const json1 = await response1.json();
-            memId = json1.Response.profiles[0].membershipId;
+            const json = await response.json();
+            var memId = json.Response[0].membershipId;
 
-            const getCharacters = async() => {
-              const response2 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
+            const getProfiles = async() => {
+              const response1 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
                 headers:{
                   'X-API-KEY' : apiKey
                 }
               })
-              const json2 = await response2.json();
-              var d = json2.Response.characters;
-              var emblem = d.data[Object.keys(d.data)[0]].emblemPath;
-              document.getElementById("jimg-" + x).src = "https://www.bungie.net/" + emblem;
+              const json1 = await response1.json();
+              memId = json1.Response.profiles[0].membershipId;
+
+              const getCharacters = async() => {
+                const response2 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
+                  headers:{
+                    'X-API-KEY' : apiKey
+                  }
+                })
+                const json2 = await response2.json();
+                var d = json2.Response.characters;
+                var emblem = d.data[Object.keys(d.data)[0]].emblemPath;
+                document.getElementById("jimg-" + x).src = "https://www.bungie.net/" + emblem;
+              }
+              getCharacters();
             }
-            getCharacters();
+            getProfiles();
           }
-          getProfiles();
+          getEmblem();
         }
-        getEmblem();
       }
-    }
-    forLoop();
+      forLoop();
 
     //Initialize a variable to count backups
     var backupCount = 0;
