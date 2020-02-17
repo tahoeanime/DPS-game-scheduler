@@ -1,44 +1,65 @@
 var apiKey = "031375cf97e14c8193046ff6912b17e9";
 
-const getMemId = async() => {
+const getEmblem = async() => {
   const response = await fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
     headers:{
       'X-API-KEY' : apiKey
     }
   })
   const json = await response.json();
-  console.log(json);
-  return json;
-}
-var memObject = getMemId();
-console.log(memObject);
-var memId = memObject.Response[0].membershipId;
+  var memId = json.Response[0].membershipId;
+  getProfiles();
 
-const getProfiles = async() => {
-  const response1 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
-    headers:{
-      'X-API-KEY' : apiKey
-    }
-  })
-  const json1 = await response1.json();
-  return json1;
-}
-var profiles = getProfiles();
-memId = profile.Response.profiles[0].membershipId;
+  const getProfiles = async() => {
+    const response1 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
+      headers:{
+        'X-API-KEY' : apiKey
+      }
+    })
+    const json1 = await response1.json();
+    memId = json1.Response.profiles[0].membershipId;
+    getCharacters();
 
-const getCharacters = async() => {
-  const response2 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
-    headers:{
-      'X-API-KEY' : apiKey
+    const getCharacters = async() => {
+      const response2 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
+        headers:{
+          'X-API-KEY' : apiKey
+        }
+      })
+      const json2 = await response2.json();
+      var d = json2.Response.characters;
+      var dProfile = d.data[Object.keys(d.data)[0]];
+      console.log(dProfile);
     }
-  })
-  const json2 = await response2.json();
-  return json2;
+  }
 }
-var characters = getCharacters();
-var d = destinyProfile.Response.characters;
-var dProfile = d.data[Object.keys(d.data)[0]];
-console.log(dProfile);
+getEmblem();
+
+// const getProfiles = async() => {
+//   const response1 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
+//     headers:{
+//       'X-API-KEY' : apiKey
+//     }
+//   })
+//   const json1 = await response1.json();
+//   return json1;
+// }
+// var profiles = getProfiles();
+// memId = profile.Response.profiles[0].membershipId;
+//
+// const getCharacters = async() => {
+//   const response2 = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
+//     headers:{
+//       'X-API-KEY' : apiKey
+//     }
+//   })
+//   const json2 = await response2.json();
+//   return json2;
+// }
+// var characters = getCharacters();
+// var d = destinyProfile.Response.characters;
+// var dProfile = d.data[Object.keys(d.data)[0]];
+// console.log(dProfile);
 
 /*
 fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
