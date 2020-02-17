@@ -23,7 +23,7 @@ fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
       .then((profile) => {
         memId = profile.Response.profiles[0].membershipId;
         //Get the data from the first of the player's linked Destiny profiles
-        fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Profiles,Characters,CharacterProgressions',{
+        fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId +'?components=Characters',{
             headers:{
               'X-API-KEY' : apiKey
             }
@@ -32,38 +32,10 @@ fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
             return response.json();
           })
           .then((destinyProfile) => {
-            console.log(destinyProfile);
+            console.log(destinyProfile.Response.characters.data);
           })
       })
   });
-
-/*
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat", true);
-xhr.setRequestHeader("X-API-Key", apiKey);
-
-xhr.onreadystatechange = function(){
- if(this.readyState === 4 && this.status === 200){
-  var json = JSON.parse(this.responseText);
-  memId = json.Response[0].membershipId;
-  console.log(json.Response[0]);
- }
-}
-
-xhr.send();
-
-var g = new XMLHttpRequest();
-g.open("GET", "https://www.bungie.net/platform/Destiny2/1/Profile/" + memId + "/LinkedProfiles/", true);
-g.setRequestHeader("X-API-Key", apiKey);
-
-g.onreadystatechange = function(){
- if(this.readyState === 4 && this.status === 200){
-  var json = JSON.parse(this.responseText);
- }
-}
-
-g.send();
-*/
 
 /*
 //Get the current URL
@@ -124,7 +96,13 @@ function GetData(){
     for(x in playerData)
     {
       playerCount++;
-      document.getElementById("players").innerHTML += '<li class="list-group-item">'+playerData[x].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-'+ x +'" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-minus"></i></a></li><div class="collapse" id="j-'+ x +'"><div class="card-body bg-danger text-white clearfix"><span class="align-middle">Remove '+playerData[x].gamertag+'?</span><a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('+ "'" + x +"'" + ','+"'"+'joined' + "'" + ')">Confirm</a></div></div>';
+      const playerLine = `
+      <li class="list-group-item">
+      ${playerData[x].gamertag} <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-${x}" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-minus"></i></a>
+      </li>
+      `;
+      document.getElementById("players").innerHTML += playerLine;
+      // document.getElementById("players").innerHTML += '<li class="list-group-item">'+playerData[x].gamertag+' <a class="btn btn-sm btn-outline-dark float-right" data-toggle="collapse" href="#j-'+ x +'" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-user-minus"></i></a></li><div class="collapse" id="j-'+ x +'"><div class="card-body bg-danger text-white clearfix"><span class="align-middle">Remove '+playerData[x].gamertag+'?</span><a href="" class="btn btn-sm btn-outline-light float-right" onclick="PlayerDelete('+ "'" + x +"'" + ','+"'"+'joined' + "'" + ')">Confirm</a></div></div>';
     }
 
     //Initialize a variable to count backups
