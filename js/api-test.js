@@ -1,6 +1,21 @@
 var apiKey = "031375cf97e14c8193046ff6912b17e9";
 var memId = "";
 
+const request = async() => {
+  const response = await fetch('https://www.bungie.net/platform/Destiny2/1/Profile/' + memId + '/LinkedProfiles/',{
+    headers:{
+      'X-API-KEY' : apiKey
+    }
+  })
+  const json = await response.json();
+  console.log(json);
+  return json;
+}
+
+request();
+var memberId = request();
+console.log(memberId);
+
 fetch('https://www.bungie.net/platform/User/SearchUsers?q=bmansayswhat',{
   headers:{
     'X-API-KEY' : apiKey
@@ -109,7 +124,8 @@ function GetData(){
       `;
 
       document.getElementById("players").innerHTML += playerLine;
-      emblem = document.getElementById("jimg-" + x);
+      var emblem = document.getElementById("jimg-" + x);
+      console.log("jimg-" + x);
 
       //Get the player's destiny profile
       if(game == "destiny-2")
@@ -147,7 +163,7 @@ function GetData(){
                 .then((destinyProfile) => {
                   var d = destinyProfile.Response.characters;
                   var dProfile = d.data[Object.keys(d.data)[0]];
-                  console.log("jimg-" + x);
+                  // console.log("jimg-" + x);
                   emblem.src = "https://www.bungie.net/"+dProfile.emblemPath;
                 })
             })
