@@ -192,7 +192,7 @@ function SubmitEvent() {
     var params = {
       username: "My Webhook Name",
       avatar_url: "",
-      content: ' **' + title + ' **' + ' ``` ' + startTime + ' ' + timezone + ' ``` ' + ' created by: ' + ' **'+ gamertag + '**' + ' for ' + '** ' + openSpots + ' ' + 'players' + ' ** ' + ' ``` ' + details + ' ``` ' + ' (Tap the link to sign up for the event) ' + 'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game + '@everyone'
+      content: ' **' + title + ' **' + ' ``` ' + startTime + ' ' + timezone + ' ``` ' + ' created by: ' + ' **'+ gamertag + '**' + ' for ' + '** ' + openSpots + ' ' + 'players' + ' ** ' + ' ``` ' + details + ' ``` ' + ' (Tap the link to sign up for the event) ' + 'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game + ' @everyone'
     }
 
     //Post to Discord
@@ -200,7 +200,7 @@ function SubmitEvent() {
 
     //set the form action to open the event details page which will show the data for the event
     // document.getElementById("new-event").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
-    // document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
+    document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
 
   }
   else
