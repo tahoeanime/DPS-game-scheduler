@@ -186,8 +186,22 @@ function SubmitEvent() {
     // document.getElementById("new-event").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
     document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
 
+    //Discord HTTP
+    var request = new XMLHttpRequest();
+    request.open("POST", "https://discordapp.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF");
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    //The Message
+    var params = {
+      Authorization: "Bot MzY5MjE2Mzg5Mjc5MzgzNTky.DMVU6Q.SomK7uuoQHcBSMCDjWK4XkYtkLM",
+      username: "My Webhook Name",
+      avatar_url: "",
+      content: "The message to send"
+    }
+
     //Post to Discord
-    //Format that post
+    request.send(JSON.stringify(params));
   }
   else
   {
