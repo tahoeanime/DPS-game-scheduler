@@ -16,8 +16,8 @@
 <title>Game Scheduler</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#"><img src="https://pbs.twimg.com/profile_images/954562191587532801/xu54441J_400x400.jpg" class="rounded-circle" width="30" height="30"></a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dkgreen">
+    <a class="navbar-brand" href="#"><img src="https://pbs.twimg.com/profile_images/954562191587532801/xu54441J_400x400.jpg" class="rounded-circle" width="60" height="60"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,11 +26,12 @@
         <a class="nav-item nav-link" href="https://bmansayswhat.github.io/game-scheduler/index.html">Upcoming Events</a>
         <a class="nav-item nav-link" href="https://bmansayswhat.github.io/game-scheduler/past-events.html">Past Events</a>
         <a class="nav-item nav-link active" href="https://bmansayswhat.github.io/game-scheduler/new-event.html"><i class="fas fa-plus-circle"></i> New Event <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="https://dungeonprotocols.godaddysites.com">DPS Webite</a>
       </div>
     </div>
   </nav>
   <div class="container">
-    <h1 class="mt-4">New Event</h1>
+    <h1 class="mt-4">Create a New Event</h1>
     <!-- <div class="row">
       <div class="col mt-4">
         <img src="http://placekitten.com/1800/600" class="img-fluid" alt="Responsive image">
@@ -43,19 +44,19 @@
             <div class="form-check">
               <input class="form-check-input" type="radio" name="game-radios" value="destiny-2" id="game" checked>
               <label class="form-check-label" for="destiny-2">
-                Destiny 2
+                <h3 class="mt-4">Destiny 2</h3>
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="game-radios" value="elder-scrolls" id="game">
               <label class="form-check-label" for="elder-scrolls">
-                Elder Scrolls Online
+                <h3 class="mt-4">Elder Scrolls Online</h3>
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="game-radios" value="other" id="game">
               <label class="form-check-label" for="other">
-                Other
+                <h3 class="mt-4">Other</h3>
               </label>
             </div>
           </fieldset>
@@ -129,6 +130,8 @@
               <option>3</option>
               <option>4</option>
               <option>5</option>
+              <option>6</option>
+              <option>all</option>
             </select>
           </div>
           <div class="form-group">
@@ -139,6 +142,7 @@
               <option>3</option>
               <option>4</option>
               <option>5</option>
+              <option>6</option>
             </select>
           </div>
           <div class="form-group">
@@ -149,16 +153,16 @@
             <label for="gamertag">Gamertag</label>
             <input type="text" class="form-control" id="gamertag" placeholder="Gamertag">
           </div>
-          <button type="submit" class="btn btn-primary" value="Submit by Id" onclick="SubmitEvent()">Submit</button>
+          <button type="submit" class="btn btn-primary" value="Submit by Id" onclick="SubmitEvent()">Create event</button>
         <!-- </form> -->
       </div>
     </div>
   </div>
-  <div class="mt-4 bg-light">
+  <div class="mt-4 bg-dkgreen">
     <div class="container">
       <div class="row">
-        <div class="col mt-4 bg-light">
-          <p>Dungeon Protocols</p>
+        <div class="col mt-4 bg-dkgreen text-white">
+          <h3>Dungeon Protocols</h3>
         </div>
       </div>
     </div>
