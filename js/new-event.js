@@ -192,6 +192,10 @@ function SubmitEvent() {
     var params = {
       content: '@everyone **' + title + ' **' + ' ``` ' + startTime + ' ' + timezone + ' ``` ' + ' created by: ' + ' **'+ gamertag + '**' + ' for ' + '** ' + openSpots + ' ' + 'players' + ' ** ' + ' ``` ' + details + ' ``` ',
       embeds: [{
+        "title": title,
+        "color": "14177041"
+      },
+      {
         "title": "Sign Up For The Event",
         "url": 'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game
         }]
