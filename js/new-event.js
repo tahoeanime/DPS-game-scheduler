@@ -182,10 +182,6 @@ function SubmitEvent() {
       invStartDateMil : invStartDateMil
     });
 
-    //set the form action to open the event details page which will show the data for the event
-    // document.getElementById("new-event").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
-    document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
-
     //Discord HTTP
     var request = new XMLHttpRequest();
     request.open("POST", "https://discordapp.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF");
@@ -200,6 +196,11 @@ function SubmitEvent() {
 
     //Post to Discord
     request.send(JSON.stringify(params));
+
+    //set the form action to open the event details page which will show the data for the event
+    // document.getElementById("new-event").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
+    document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
+
   }
   else
   {
