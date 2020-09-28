@@ -191,7 +191,6 @@ function SubmitEvent() {
     //The Message
     var params = {
       username: "Destiny 2 Event Bot",
-      avatar_url: "https://google.com",
       content: '@everyone **' + title + ' **' + ' ``` ' + startTime + ' ' + timezone + ' ``` ' + ' created by: ' + ' **'+ gamertag + '**' + ' for ' + '** ' + openSpots + ' ' + 'players' + ' ** ' + ' ``` ' + details + ' ``` ' + ' (Tap the link to sign up for the event) ' + 'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game
     }
 
