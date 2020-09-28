@@ -194,7 +194,6 @@ function SubmitEvent() {
 
     //The Message
     var params = {
-      Authorization: "Bot MzY5MjE2Mzg5Mjc5MzgzNTky.DMVU6Q.SomK7uuoQHcBSMCDjWK4XkYtkLM",
       username: "My Webhook Name",
       avatar_url: "",
       content: "The message to send"
