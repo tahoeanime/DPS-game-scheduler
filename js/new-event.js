@@ -200,7 +200,7 @@ function SubmitEvent() {
 
     //set the form action to open the event details page which will show the data for the event
     // document.getElementById("new-event").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
-    document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
+    // document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
 
   }
   else
