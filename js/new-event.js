@@ -208,6 +208,10 @@ function SubmitEvent() {
     // document.getElementById("new-event").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
     document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
 
+
+
+    //Post to Discord
+    //Format that post farts
   }
   else
   {
