@@ -195,7 +195,7 @@ function SubmitEvent() {
     //The Message
     var params = {
       avatar_url: "",
-      content: ' **' + title + ' **' + ' ``` ' + startTime.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute:'2-digit'}) + ' ' + timezone + ' ``` ' + ' created by: ' + ' **'+ gamertag + '**' + ' for ' + '** ' + openSpots + ' ' + 'players' + ' ** ' + ' ``` ' + details + ' ``` ' + ' (Tap the link to sign up for the event) ' + 'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game + '@everyone'
+      content: ' **' + title + ' **' + ' ``` ' + startTime + ' ' + timezone + ' ``` ' + ' created by: ' + ' **'+ gamertag + '**' + ' for ' + '** ' + openSpots + ' ' + 'players' + ' ** ' + ' ``` ' + details + ' ``` ' + ' (Tap the link to sign up for the event) ' + 'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game + '@everyone'
     }
 
     //Post to Discord
