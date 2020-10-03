@@ -197,7 +197,7 @@ function SubmitEvent() {
       },
       {
         "title": "Sign Up For The Event",
-        "url": 'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game
+        "url": 'https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e='+ref.key +"&game="+ game
         }]
     }
 
@@ -206,7 +206,7 @@ function SubmitEvent() {
 
     //set the form action to open the event details page which will show the data for the event
     // document.getElementById("new-event").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
-    document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
+    document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
 
 
 

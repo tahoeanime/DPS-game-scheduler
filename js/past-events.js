@@ -55,7 +55,7 @@ function GetData(game){
               </div>
               <div class="row mt-4">
                 <div class="col">
-                  <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary btn-block">View event</a>
+                  <a href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary btn-block">View event</a>
                 </div>
               </div>
             </div>
