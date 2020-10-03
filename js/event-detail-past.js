@@ -167,7 +167,7 @@ function PlayerDelete(id, joinType)
 function EventDelete()
 {
   var ref = firebase.database().ref('/' + game + '/' + e).remove();
-  document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/past-event.html";
+  document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/past-events.html";
 }
 
 $('#deleteEvent').on('shown.bs.modal', function () {
