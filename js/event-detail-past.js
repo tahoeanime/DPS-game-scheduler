@@ -26,7 +26,7 @@ function GetData(){
   const eventCard = `
     <div class="card">
       <h5 class="card-header bg-dark text-white">${eventData.gameNice}</h5>
-      <div class="card-body bg-dkgreen">
+      <div class="card-body">
         <h5 class="card-title">${eventData.title}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
         <div class="row mt-4">
