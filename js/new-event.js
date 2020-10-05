@@ -183,6 +183,7 @@ function SubmitEvent() {
     });
 
     //Discord HTTP
+    function sendMessage() {
     var request = new XMLHttpRequest();
     request.open("POST", "https://discordapp.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF");
 
@@ -200,6 +201,7 @@ function SubmitEvent() {
         "url": 'https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e='+ref.key +"&game="+ game
         }]
     }
+  }
 
     //Post to Discord
     request.send(JSON.stringify(params));
