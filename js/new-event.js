@@ -184,21 +184,14 @@ function SubmitEvent() {
 
     //Discord HTTP
     var request = new XMLHttpRequest();
-    request.open("POST", "https://discordapp.com/api/webhooks/762752102177964033/nGYc6KlYvJ2b8usIX_8pIltJg6-le48cVPLRwHJqPyEgFC6flml-j9FYx2i1CO0DNLBE");
+    request.open("POST", "https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF");
 
     request.setRequestHeader('Content-type', 'application/json');
 
     //The Message
     var params = {
       content: '@everyone **' + title + ' **' + ' ``` ' + startTime + ' ' + timezone + ' ``` ' + ' created by: ' + ' **'+ gamertag + '**' + ' for ' + '** ' + openSpots + ' ' + 'players' + ' ** ' + ' ``` ' + details + ' ``` ',
-      embeds: [{
-        "title": title,
-        "color": "14177041"
-      },
-      {
-        "title": "Sign Up For The Event",
-        "url": 'https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e='+ref.key +"&game="+ game
-        }]
+
     }
 
     //Post to Discord
