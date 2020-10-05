@@ -184,7 +184,7 @@ function SubmitEvent() {
 
     //Discord HTTP
     var request = new XMLHttpRequest();
-    request.open("POST", "https://discord.com/api/webhooks/762752102177964033/nGYc6KlYvJ2b8usIX_8pIltJg6-le48cVPLRwHJqPyEgFC6flml-j9FYx2i1CO0DNLBE");
+    request.open("POST", "https://discordapp.com/api/webhooks/762752102177964033/nGYc6KlYvJ2b8usIX_8pIltJg6-le48cVPLRwHJqPyEgFC6flml-j9FYx2i1CO0DNLBE");
 
     request.setRequestHeader('Content-type', 'application/json');
 
