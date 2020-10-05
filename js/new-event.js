@@ -220,7 +220,7 @@ function SubmitEvent() {
                 value: openSpots,
                 },
                 ],
-                title: Click here to Join,
+                title: 'Click Here to Join',
                 url:
                 'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game,
             },
