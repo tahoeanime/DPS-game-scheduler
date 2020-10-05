@@ -201,7 +201,7 @@ function SubmitEvent() {
         "url": 'https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e='+ref.key +"&game="+ game
         }]
     }
-  }
+
 
     //Post to Discord
     request.send(JSON.stringify(params));
