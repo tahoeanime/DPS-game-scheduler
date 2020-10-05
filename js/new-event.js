@@ -214,10 +214,12 @@ function SubmitEvent() {
                   {
                   name: 'Created by:',
                   value: gamertag,
+                  "inline": true
                   },
                   {
                   name: 'Open spots:',
                   value: openSpots,
+                  "inline": true
                   },
                 ],
                 title: title + ': Click to Join',
