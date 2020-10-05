@@ -192,10 +192,12 @@ function SubmitEvent() {
         body: JSON.stringify({
           // contents of the message to be sent
           content:
-            'everyone **' + title + '**',
+            'everyone',
           // embeds to be sent
           embeds: [
             {
+              // title
+              title: '**' + title + '**',
               // decimal number colour of the side of the embed
               color: 14177041,
               // embed description
