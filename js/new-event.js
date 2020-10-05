@@ -192,7 +192,7 @@ function SubmitEvent() {
         body: JSON.stringify({
           // contents of the message to be sent
           content:
-            title,
+            'everyone **' + title + '** ' + ' ``` ' + startTime + ' ' + timezone + ' ``` ' + ' created by: ' + ' **'+ gamertag + '** ' + ' for ' + ' **' + openSpots + ' ' + 'players' + '** ' + ' ``` ' + details + ' ``` ',
           // embeds to be sent
           embeds: [
             {
@@ -201,24 +201,24 @@ function SubmitEvent() {
               // embed description
               description: details,
               fields: [
-                {
-                name: 'Start Time',
-                value: startTime + ' ' + timezone,
-                "inline": true
-                },
-                {
-                name: 'End Time',
-                value: endTime + ' ' + timezone,
-                "inline": true
-                },
-                {
-                name: 'Created by:',
-                value: gamertag,
-                },
-                {
-                name: 'Open spots:',
-                value: openSpots,
-                },
+                  {
+                  name: 'Start Time',
+                  value: startTime + ' ' + timezone,
+                  "inline": true
+                  },
+                  {
+                  name: 'End Time',
+                  value: endTime + ' ' + timezone,
+                  "inline": true
+                  },
+                  {
+                  name: 'Created by:',
+                  value: gamertag,
+                  },
+                  {
+                  name: 'Open spots:',
+                  value: openSpots,
+                  },
                 ],
                 title: 'Click Here to Join',
                 url:
