@@ -182,28 +182,6 @@ function SubmitEvent() {
       invStartDateMil : invStartDateMil
     });
 
-    //Discord HTTP
-    // var request = new XMLHttpRequest();
-    // request.open("POST", "https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF");
-    //
-    // request.setRequestHeader('Content-type', 'application/json');
-    //
-    // //The Message
-    // var params = {
-    //   content: '@everyone **' + title + ' **' + ' ``` ' + startTime + ' ' + timezone + ' ``` ' + ' created by: ' + ' **'+ gamertag + '**' + ' for ' + '** ' + openSpots + ' ' + 'players' + ' ** ' + ' ``` ' + details + ' ``` ',
-    //   embeds: [{
-    //     "title": title,
-    //     "color": "14177041"
-    //   },
-    //   {
-    //     "title": "Sign Up For The Event",
-    //     "url": 'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game
-    //     }]
-    // }
-    //
-    // //Post to Discord
-    // request.send(JSON.stringify(params));
-
     fetch(
       'https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF',
       {
@@ -214,20 +192,37 @@ function SubmitEvent() {
         body: JSON.stringify({
           // contents of the message to be sent
           content:
-            title + ' **' + ' ``` ' + startTime + ' ' + timezone + ' ``` ' + ' created by: ' + ' **'+ gamertag + '**' + ' for ' + '** ' + openSpots + ' ' + 'players' + ' ** ' + ' ``` ' + details + ' ``` ',
+            title
           // embeds to be sent
           embeds: [
             {
               // decimal number colour of the side of the embed
               color: 14177041,
-              // embed title
-              // - link on 2nd row
-              title: title,
-              url:
-                'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game,
               // embed description
-              // - text on 3rd row
-              description: title + ' **' + ' ``` ' + startTime + ' ' + timezone + ' ``` ' + ' created by: ' + ' **'+ gamertag + '**' + ' for ' + '** ' + openSpots + ' ' + 'players' + ' ** ' + ' ``` ' + details + ' ``` ',
+              description: details,
+              fields: [
+                {
+                name: 'Start Time',
+                value: startTime + ' ' + timezone,
+                "inline": true
+                },
+                {
+                name: 'End Time',
+                value: endTime + ' ' + timezone,
+                "inline": true
+                },
+                {
+                name: 'Created by:',
+                value: gamertag,
+                },
+                {
+                name: 'Open spots:',
+                value: openSpots,
+                },
+                ],
+                title: Click here to Join,
+                url:
+                'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game,
             },
           ],
         }),
