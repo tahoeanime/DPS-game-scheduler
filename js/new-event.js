@@ -192,7 +192,7 @@ function SubmitEvent() {
         body: JSON.stringify({
           // contents of the message to be sent
           content:
-            title
+            title,
           // embeds to be sent
           embeds: [
             {
