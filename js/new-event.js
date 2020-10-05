@@ -196,8 +196,6 @@ function SubmitEvent() {
           // embeds to be sent
           embeds: [
             {
-              // title
-              title: '**' + title + '**',
               // decimal number colour of the side of the embed
               color: 14177041,
               // embed description
@@ -222,7 +220,7 @@ function SubmitEvent() {
                   value: openSpots,
                   },
                 ],
-                title: 'Click Here to Join',
+                title: title + ': Click to Join',
                 url:
                 'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game,
             },
