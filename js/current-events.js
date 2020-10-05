@@ -54,7 +54,7 @@ function GetData(game){
         <div class="row">
           <div class="col-lg-6">
             <div class="card mt-4">
-              <div class="card-body">
+              <div class="card-body bg-ltgreen">
                 <h5 class="card-title">${eventData.title}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
                 <div class="row mt-4">
