@@ -192,7 +192,7 @@ function SubmitEvent() {
         body: JSON.stringify({
           // contents of the message to be sent
           content:
-            'everyone **' + title + '** ' + ' ``` ' + startTime + ' ' + timezone + ' ``` ' + ' created by: ' + ' **'+ gamertag + '** ' + ' for ' + ' **' + openSpots + ' ' + 'players' + '** ' + ' ``` ' + details + ' ``` ',
+            'everyone **' + title + '**',
           // embeds to be sent
           embeds: [
             {
