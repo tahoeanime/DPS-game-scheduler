@@ -182,33 +182,59 @@ function SubmitEvent() {
       invStartDateMil : invStartDateMil
     });
 
-    //Discord HTTP
-    var request = new XMLHttpRequest();
-    request.open("POST", "https://discordapp.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF");
-
-    request.setRequestHeader('Content-type', 'application/json');
-
-    //The Message
-    var params = {
-      content: 'everyone **' + title + ' **' + ' ``` ' + startTime + ' ' + timezone + ' ``` ' + ' created by: ' + ' **'+ gamertag + '**' + ' for ' + '** ' + openSpots + ' ' + 'players' + ' ** ' + ' ``` ' + details + ' ``` ',
-      embeds: [{
-        "title": title,
-        "color": "14177041"
-      },
+    fetch(
+      'https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF',
       {
-        "title": "Sign Up For The Event",
-        "url": 'https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e='+ref.key +"&game="+ game
-        }]
-    }
-
-    //Post to Discord
-    request.send(JSON.stringify(params));
-
-    console.log(request.responseText);
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          // contents of the message to be sent
+          content:
+            'everyone',
+          // embeds to be sent
+          embeds: [
+            {
+              // decimal number colour of the side of the embed
+              color: 14177041,
+              // embed description
+              description: details,
+              fields: [
+                  {
+                  name: 'Start Time',
+                  value: startTime + ' ' + timezone,
+                  "inline": true
+                  },
+                  {
+                  name: 'End Time',
+                  value: endTime + ' ' + timezone,
+                  "inline": true
+                  },
+                  {
+                  name: 'Created by:',
+                  value: gamertag,
+                  "inline": true
+                  },
+                  {
+                  name: 'Open spots:',
+                  value: openSpots,
+                  "inline": true
+                  },
+                ],
+                title: title + ': Click to Join',
+                url:
+                'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game,
+            },
+          ],
+        }),
+      }
+    )
+    .then(document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game);
 
     //set the form action to open the event details page which will show the data for the event
     // document.getElementById("new-event").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
-    document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
+    //document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
   }
   else
   {
