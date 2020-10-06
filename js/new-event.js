@@ -227,15 +227,15 @@ function SubmitEvent() {
                   "inline": true
                   },
                 ],
-                title: title + ': Click to Join',
+                title: title + ':     Click to Join',
                 url:
                 'https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e='+ref.key +"&game="+ game,
                 // footer
                 // - icon next to text at bottom
                 footer: {
-                  text: 'test image',
+                  text: 'DPS',
                   icon_url:
-                    'https://cdn.discordapp.com/emojis/705455727455502426.png?v=1',
+                    'https://cdn.discordapp.com/icons/230026270258364417/248837c9a0a596cdffc65facdbb7cfeb.png?size=128',
                 },
             },
           ],
