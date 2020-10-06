@@ -221,6 +221,11 @@ function SubmitEvent() {
                   value: openSpots,
                   "inline": true
                   },
+                  {
+                  name: 'backup spots:',
+                  value: backupSpots,
+                  "inline": true
+                  },
                 ],
                 title: title + ': Click to Join',
                 url:
