@@ -159,9 +159,30 @@ function SubmitEvent() {
     }
   }
 
+  //Handle timezones
+  var localOffset = 0;
+  switch(timezone)
+  {
+    case "PST":
+    localOffset = 2 * 3600000;
+    break;
+    case "MST":
+    localOffset = 1 * 3600000;
+    break;
+    case "CST":
+    localOffset = 0 * 3600000;
+    break;
+    case "EST":
+    localOffset = -1 * 3600000;
+    break;
+  }
+
   var inverseDate = 0 - Date.now();
-  var startDateMil = new Date(startDate).getTime();
+  var startDateMil = new Date(startDate + ' ' + startTime).getTime();
+  startDateMil += localOffset;
   var invStartDateMil = 0-startDateMil;
+  var endDateMil = new Date(endDate + ' ' + endTime).getTime();
+  endDateMil += localOffset;
 
   //If the fields are all complete, add to the database
   if(complete == true)
@@ -184,6 +205,7 @@ function SubmitEvent() {
       playersJoined : 0,
       playersBackup : 0,
       startDateMil : startDateMil,
+      endDateMil : endDateMil,
       invStartDateMil : invStartDateMil
     });
 
@@ -235,11 +257,11 @@ function SubmitEvent() {
         }),
       }
     )
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch((error) => {
-      console.error('Error:', error);
-      })
+    // .then(response => response.json())
+    // .then(data => console.log(data))
+    // .catch((error) => {
+    //   console.error('Error:', error);
+    //   })
     // .then(document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game);
 
     //Load the modal

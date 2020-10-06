@@ -1,11 +1,18 @@
 //Get the current date and store it in milliseconds
 //Instead of using Date.now() which is too precise, this stops at day, doesn't include time
 var d = new Date();
-var date = d.getDate();
-var month = d.getMonth() + 1; // Since getMonth() returns month from 0-11 not 1-12
-var year = d.getFullYear();
-var dateStr = month + "/" + date + "/" + year;
-var today = new Date(dateStr).getTime();
+// var date = d.getDate();
+// var month = d.getMonth() + 1; // Since getMonth() returns month from 0-11 not 1-12
+// var year = d.getFullYear();
+// var dateStr = month + "/" + date + "/" + year;
+// var today = new Date(dateStr).getTime();
+
+var localTime = d.getTime();
+
+var today = localTime;
+
+console.log(d);
+
 console.log(today);
 
 //Get the selected game from the radio buttons on the page
@@ -30,7 +37,7 @@ function GetData(game){
   document.getElementById("events").innerHTML = '';
   //Get the data from the database for the selected radio button
   return database.ref('/' + game).orderByChild('startDateMil').startAt(today).once('value', function(snapshot) {
-    console.log(snapshot.val());
+    // console.log(snapshot.val());
     if(snapshot.val() == null)
     {
       const noEvent = `
@@ -48,7 +55,11 @@ function GetData(game){
         //Store the data
         const eventData = childSnapshot.val();
         const eventKey = childSnapshot.key;
-        console.log(eventKey);
+        // console.log(eventKey);
+        var startDateMil = new Date(eventData.startDateMil);
+        var endDateMil = new Date(eventData.endDateMil);
+        var startDateLocale = startDateMil.toLocaleString("en-US",{dateStyle:"medium",timeStyle:"short"});
+        var endDateLocale = endDateMil.toLocaleString("en-US",{dateStyle:"medium",timeStyle:"short"});
         //The template we'll use for the data
         const eventCard = `
         <div class="row">
@@ -58,8 +69,8 @@ function GetData(game){
                 <h5 class="card-title">${eventData.title}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
                 <div class="row mt-4">
-                  <div class="col-lg"><strong>Start:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</div>
-                  <div class="col-lg"><strong>End:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</div>
+                  <div class="col-lg"><strong>Start:</strong> ${startDateLocale}</div>
+                  <div class="col-lg"><strong>End:</strong> ${endDateLocale}</div>
                 </div>
                 <div class="row mt-4">
                   <div class="col">
@@ -82,7 +93,7 @@ function GetData(game){
         </div>`;
         //Add to the html on the page
         document.getElementById("events").innerHTML += eventCard;
-        console.log(eventData);
+        // console.log(eventData);
 
           //Seperate out the players joined data from the data we already pulled
           const playerData = eventData.joined;

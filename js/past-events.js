@@ -9,6 +9,11 @@ var yesterday = new Date(dateStr).getTime();
 var invYesterday = 0-yesterday;
 console.log(dateStr);
 
+var localTime = d.getTime();
+var today = 0-localTime;
+
+console.log(today);
+
 //Get the selected game from the radio buttons on the page
 function GetGame(){
   var radios = document.getElementsByName('game-radios');
@@ -30,12 +35,17 @@ function GetData(game){
   //Clear the html on the page
   document.getElementById("past-events").innerHTML = '';
   //Get the data from the database for the selected radio button
-  return database.ref('/' + game).orderByChild('invStartDateMil').startAt(invYesterday).limitToFirst(25).once('value', function(snapshot) {
+  return database.ref('/' + game).orderByChild('invStartDateMil').startAt(today).limitToFirst(25).once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       //Store the data
       const eventData = childSnapshot.val();
       const eventKey = childSnapshot.key;
-      console.log(eventKey);
+
+      var startDateMil = new Date(eventData.startDateMil);
+      var endDateMil = new Date(eventData.endDateMil);
+      var startDateLocale = startDateMil.toLocaleString("en-US",{dateStyle:"medium",timeStyle:"short"});
+      var endDateLocale = endDateMil.toLocaleString("en-US",{dateStyle:"medium",timeStyle:"short"});
+
       //The template we'll use for the data
       const eventCard = `
       <div class="row">
@@ -45,8 +55,8 @@ function GetData(game){
               <h5 class="card-title">${eventData.title}</h5>
               <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
               <div class="row mt-4">
-                <div class="col-lg"><strong>Start:</strong> ${eventData.startDate} ${eventData.startTime} ${eventData.timezone}</div>
-                <div class="col-lg"><strong>End:</strong> ${eventData.endDate} ${eventData.endTime} ${eventData.timezone}</div>
+                <div class="col-lg"><strong>Start:</strong> ${startDateLocale}</div>
+                <div class="col-lg"><strong>End:</strong> ${endDateLocale}</div>
               </div>
               <div class="row mt-4">
                 <div class="col">
