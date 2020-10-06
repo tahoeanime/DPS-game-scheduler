@@ -13,10 +13,6 @@ $('#end-time').pickatime({
   min: 0
 });
 
-$('#loadingEvent').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
-
 // Make sure any browser can get today's Date
 // This will be inverted and stored so we can retrieve items in desc order
 if (!Date.now) {
@@ -239,7 +235,9 @@ function SubmitEvent() {
     .catch((error) => {
       console.error('Error:', error);
       })
-    .then(document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game);
+    // .then(document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game);
+
+    $('#loading').modal('show');
 
     //set the form action to open the event details page which will show the data for the event
     // document.getElementById("new-event").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
