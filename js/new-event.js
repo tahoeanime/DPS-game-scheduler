@@ -13,6 +13,10 @@ $('#end-time').pickatime({
   min: 0
 });
 
+$('#loadingEvent').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+
 // Make sure any browser can get today's Date
 // This will be inverted and stored so we can retrieve items in desc order
 if (!Date.now) {
