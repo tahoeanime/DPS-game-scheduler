@@ -44,7 +44,7 @@ function GetData(game){
       <div class="card mt-4">
         <div class="card-body">
           <h5 class="card-title">No Upcoming Events</h5>
-          <a href="https://bmansayswhat.github.io/game-scheduler/new-event.html" class="btn btn-primary"><i class="fas fa-plus-circle"></i> New Event</a>
+          <a href="https://tahoeanime.github.io/DPS-game-scheduler/new-event.html" class="btn btn-primary"><i class="fas fa-plus-circle"></i> New Event</a>
         </div>
       </div>`;
 
@@ -79,7 +79,7 @@ function GetData(game){
                 </div>
                 <div class="row mt-4">
                   <div class="col">
-                    <a href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary btn-block">View event</a>
+                    <a href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e=${eventKey}&game=${eventData.game}" class="btn btn-primary btn-block">View event</a>
                   </div>
                 </div>
               </div>

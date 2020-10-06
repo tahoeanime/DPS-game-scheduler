@@ -25,7 +25,7 @@ function GetData(){
   //The template we'll use for the event card
   const eventCard = `
     <div class="card">
-      <h5 class="card-header bg-dark text-white">${eventData.gameNice}</h5>
+      <h5 class="card-header bg-dkgreen text-white">${eventData.gameNice}</h5>
       <div class="card-body">
         <h5 class="card-title">${eventData.title}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
@@ -160,14 +160,14 @@ function PlayerJoin() {
 function PlayerDelete(id, joinType)
 {
   var ref = firebase.database().ref('/' + game + '/' + e + '/'+ joinType +'/' + id).remove();
-  // document.getElementById("player-join").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+e +"&game="+game;
+  // document.getElementById("player-join").action = "https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+e +"&game="+game;
   location.reload();
 }
 
 function EventDelete()
 {
   var ref = firebase.database().ref('/' + game + '/' + e).remove();
-  document.location.href="https://bmansayswhat.github.io/game-scheduler/index.html";
+  document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/index.html";
 }
 
 $('#deleteEvent').on('shown.bs.modal', function () {

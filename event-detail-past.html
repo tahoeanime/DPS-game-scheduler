@@ -32,37 +32,12 @@
     </div>
   </nav>
   <div class="container">
-    <u><h1 class="mt-4">Event Detail</h1></u>
+    <u><h1 class="mt-4">Past Event Detail</h1></u>
     <div class="row">
       <div class="col-lg mt-4" id="event">
         <!-- EVENT DETAILS FILLED IN VIA JAVASCRIPT -->
       </div>
-      <div class="col mt-4" id="join">
-        <div class="card">
-          <div class="card-body">
-            <h3>Join this event</h3>
-            <div class="form-group">
-              <label for="gamertag">Gamertag</label>
-              <input type="text" class="form-control" id="gamertag">
-            </div>
-            <fieldset class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="join-radios" value="main" id="joinMain">
-                <label class="form-check-label" for="joinMain">
-                  <h4>Main</h4>
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="join-radios" value="backup" id="joinBackup">
-                <label class="form-check-label" for="joinBackup">
-                  <h4>Backup</h4>
-                </label>
-              </div>
-            </fieldset>
-            <button type="submit" class="btn btn-primary" id="joinSubmit" onclick="PlayerJoin()">Join</button>
-          </div>
-        </div>
-      </div>
+
     </div>
     <div class="row">
       <div class="col-lg mt-4">
@@ -147,8 +122,8 @@
       <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
       <script src="js/database.js"></script>
-      <script src="js/event-detail.js"></script>
-
+      <script src="js/event-detail-past.js"></script>
+      
     </div>
     </body>
     </html>

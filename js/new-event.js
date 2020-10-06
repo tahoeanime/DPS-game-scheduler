@@ -248,10 +248,22 @@ function SubmitEvent() {
                   value: openSpots,
                   "inline": true
                   },
+                  {
+                  name: 'backup spots:',
+                  value: backupSpots,
+                  "inline": true
+                  },
                 ],
                 title: title + ' >> Click to Join',
                 url:
-                'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game,
+                'https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e='+ref.key +"&game="+ game,
+                // footer
+                // - icon next to text at bottom
+                footer: {
+                  text: 'DPS',
+                  icon_url:
+                    'https://cdn.discordapp.com/icons/230026270258364417/248837c9a0a596cdffc65facdbb7cfeb.png?size=128',
+                },
             },
           ],
         }),

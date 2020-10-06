@@ -16,6 +16,7 @@
 <title>Game Scheduler</title>
 </head>
 <body>
+<div class="bg-ltgrey">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dkgreen">
     <a class="navbar-brand" href="#"><img src="https://pbs.twimg.com/profile_images/954562191587532801/xu54441J_400x400.jpg" class="rounded-circle" width="60" height="60"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,14 +25,14 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-item nav-link" href="https://tahoeanime.github.io/DPS-game-scheduler/index.html">Upcoming Events</a>
-        <a class="nav-item nav-link" href="https://tahoeanime.github.io/DPS-game-scheduler/past-events.html">Past Events</a>
         <a class="nav-item nav-link active" href="https://tahoeanime.github.io/DPS-game-scheduler/new-event.html"><i class="fas fa-plus-circle"></i> New Event <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="https://dungeonprotocols.godaddysites.com">DPS Webite</a>
+        <a class="nav-item nav-link" href="https://tahoeanime.github.io/DPS-game-scheduler/past-events.html">Past Events</a>
       </div>
     </div>
   </nav>
   <div class="container">
-    <h1 class="mt-4">Create a New Event</h1>
+    <u><h1 class="mt-4">Create a New Event</h1></u>
     <!-- <div class="row">
       <div class="col mt-4">
         <img src="http://placekitten.com/1800/600" class="img-fluid" alt="Responsive image">
@@ -44,19 +45,19 @@
             <div class="form-check">
               <input class="form-check-input" type="radio" name="game-radios" value="destiny-2" id="game" checked>
               <label class="form-check-label" for="destiny-2">
-                <h3 class="mt-4">Destiny 2</h3>
+                <h4>Destiny 2</h4>
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="game-radios" value="elder-scrolls" id="game">
               <label class="form-check-label" for="elder-scrolls">
-                <h3 class="mt-4">Elder Scrolls Online</h3>
+                <h4>Elder Scrolls Online</h4>
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="game-radios" value="other" id="game">
               <label class="form-check-label" for="other">
-                <h3 class="mt-4">Other</h3>
+                <h4>Other</h4>
               </label>
             </div>
           </fieldset>
@@ -137,6 +138,7 @@
           <div class="form-group">
             <label for="backup-spots">Backup Spots</label>
             <select class="form-control" id="backup-spots">
+              <option>0</option>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -169,24 +171,26 @@
   </div>
   <!-- Modal -->
   <div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="loadingEventModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Posting event</h5>
-          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button> -->
-        </div>
-        <div class="modal-body">
-          <img src="https://i.imgur.com/I9XU7pG.gif" class="img-fluid" alt="loading"/>
-        </div>
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-danger" onclick="EventDelete()">Delete Event</button>
-        </div> -->
-      </div>
-    </div>
-  </div>
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel">Posting event</h5>
+           <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button> -->
+         </div>
+         <div class="modal-body">
+           <img src="https://i.imgur.com/I9XU7pG.gif" class="img-fluid" alt="loading"/>
+         </div>
+         <!-- <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+           <button type="submit" class="btn btn-danger" onclick="EventDelete()">Delete Event</button>
+         </div> -->
+       </div>
+     </div>
+   </div>
+
+</div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -200,5 +204,6 @@
   <script src="js/database.js"></script>
   <script src="js/new-event.js"></script>
 
+</div>
 </body>
 </html>
