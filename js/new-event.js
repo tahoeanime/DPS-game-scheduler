@@ -182,7 +182,7 @@ function SubmitEvent() {
       invStartDateMil : invStartDateMil
     });
 
-    fetch(
+    let response = await fetch(
       'https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF',
       {
         method: 'post',
@@ -230,7 +230,10 @@ function SubmitEvent() {
         }),
       }
     )
-    .then(document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game);
+    let result = await response.json();
+    alert(result.message);
+
+    // .then(document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game);
 
     //set the form action to open the event details page which will show the data for the event
     // document.getElementById("new-event").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
