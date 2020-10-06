@@ -225,12 +225,17 @@ function SubmitEvent() {
                 title: title + ': Click to Join',
                 url:
                 'https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e='+ref.key +"&game="+ game,
+                // footer
+                // - icon next to text at bottom
+                footer: {
+                  text: 'footer',
+                },
             },
           ],
         }),
       }
     )
-      
+
     //set the form action to open the event details page which will show the data for the event
     // document.getElementById("new-event").action = "https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
     // document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
