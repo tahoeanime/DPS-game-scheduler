@@ -36,16 +36,21 @@ function SubmitEvent() {
   }
 
   //Match to a nice name for the game so we can store it
+  //Match to a webhookURL so we can use it later
   var gameNice = "";
+  var webhookURL = "";
   switch(game){
     case "destiny-2":
       gameNice = "Destiny 2";
+      webhookURL = "https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF";
     break;
     case "elder-scrolls":
       gameNice = "Elder Scrolls";
+      webhookURL = "";
     break;
     case "other":
       gameNice = "Other";
+      webhookURL = "";
     break;
   }
 
@@ -183,7 +188,7 @@ function SubmitEvent() {
     });
 
     fetch(
-      'https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF',
+      webhookURL,
       {
         method: 'post',
         headers: {
