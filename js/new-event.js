@@ -182,7 +182,8 @@ function SubmitEvent() {
       invStartDateMil : invStartDateMil
     });
 
-fetch('https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF',
+    fetch(
+      'https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF',
       {
         method: 'post',
         headers: {
@@ -233,7 +234,7 @@ fetch('https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqm
 
     //set the form action to open the event details page which will show the data for the event
     // document.getElementById("new-event").action = "https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
-    // document.location.href="https://tahoeanime.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
+    // document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
   }
   else
   {
