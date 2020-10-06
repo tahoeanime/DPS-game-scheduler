@@ -233,7 +233,7 @@ function SubmitEvent() {
                 // footer
                 // - icon next to text at bottom
                 footer: {
-                  text: 'footer',
+                  text: 'test image',
                   icon_url:
                     'https://cdn.discordapp.com/emojis/705455727455502426.png?v=1',
                 },
