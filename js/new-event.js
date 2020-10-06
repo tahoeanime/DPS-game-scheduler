@@ -36,16 +36,21 @@ function SubmitEvent() {
   }
 
   //Match to a nice name for the game so we can store it
+  //Match to a webhookURL so we can use it later
   var gameNice = "";
+  var webhookURL = "";
   switch(game){
     case "destiny-2":
       gameNice = "Destiny 2";
+      webhookURL = "https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF";
     break;
     case "elder-scrolls":
       gameNice = "Elder Scrolls";
+      webhookURL = "";
     break;
     case "other":
       gameNice = "Other";
+      webhookURL = "";
     break;
   }
 
@@ -154,9 +159,30 @@ function SubmitEvent() {
     }
   }
 
+  //Handle timezones
+  var localOffset = 0;
+  switch(timezone)
+  {
+    case "PST":
+    localOffset = 2 * 3600000;
+    break;
+    case "MST":
+    localOffset = 1 * 3600000;
+    break;
+    case "CST":
+    localOffset = 0 * 3600000;
+    break;
+    case "EST":
+    localOffset = -1 * 3600000;
+    break;
+  }
+
   var inverseDate = 0 - Date.now();
-  var startDateMil = new Date(startDate).getTime();
+  var startDateMil = new Date(startDate + ' ' + startTime).getTime();
+  startDateMil += localOffset;
   var invStartDateMil = 0-startDateMil;
+  var endDateMil = new Date(endDate + ' ' + endTime).getTime();
+  endDateMil += localOffset;
 
   //If the fields are all complete, add to the database
   if(complete == true)
@@ -179,11 +205,12 @@ function SubmitEvent() {
       playersJoined : 0,
       playersBackup : 0,
       startDateMil : startDateMil,
+      endDateMil : endDateMil,
       invStartDateMil : invStartDateMil
     });
 
     fetch(
-      'https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF',
+      webhookURL,
       {
         method: 'post',
         headers: {
@@ -227,7 +254,11 @@ function SubmitEvent() {
                   "inline": true
                   },
                 ],
+<<<<<<< HEAD
                 title: title + ':     Click to Join',
+=======
+                title: title + ' >> Click to Join',
+>>>>>>> upstream/master
                 url:
                 'https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e='+ref.key +"&game="+ game,
                 // footer
@@ -242,6 +273,7 @@ function SubmitEvent() {
         }),
       }
     )
+<<<<<<< HEAD
     .then(response => response.json())
     .then(data => console.log(data))
     .catch((error) => {
@@ -254,6 +286,20 @@ function SubmitEvent() {
 
       //Wait and then load the event details page
       setTimeout(() => {  document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game; }, 2000);
+=======
+    // .then(response => response.json())
+    // .then(data => console.log(data))
+    // .catch((error) => {
+    //   console.error('Error:', error);
+    //   })
+    // .then(document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game);
+
+    //Load the modal
+    $('#loading').modal({backdrop: 'static', keyboard: false})
+
+    //Wait and then load the event details page
+    setTimeout(() => {  document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game; }, 2000);
+>>>>>>> upstream/master
   }
   else
   {
