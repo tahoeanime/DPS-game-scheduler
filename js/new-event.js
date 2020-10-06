@@ -235,7 +235,12 @@ function SubmitEvent() {
         }),
       }
     )
-
+    .then(response => response.json())
+       .then(data => console.log(data))
+       .catch((error) => {
+         console.error('Error:', error);
+         })
+       .then(document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game);
     //set the form action to open the event details page which will show the data for the event
     // document.getElementById("new-event").action = "https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
     // document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
