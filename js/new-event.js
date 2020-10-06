@@ -229,6 +229,8 @@ function SubmitEvent() {
                 // - icon next to text at bottom
                 footer: {
                   text: 'footer',
+                  icon_url:
+                    'https://cdn.discordapp.com/emojis/705455727455502426.png?v=1',
                 },
             },
           ],
@@ -240,7 +242,7 @@ function SubmitEvent() {
     .catch((error) => {
       console.error('Error:', error);
       })
-  
+
     //set the form action to open the event details page which will show the data for the event
     // document.getElementById("new-event").action = "https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
     // document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
