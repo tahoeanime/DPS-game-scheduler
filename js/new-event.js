@@ -254,11 +254,7 @@ function SubmitEvent() {
                   "inline": true
                   },
                 ],
-<<<<<<< HEAD
-                title: title + ':     Click to Join',
-=======
                 title: title + ' >> Click to Join',
->>>>>>> upstream/master
                 url:
                 'https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e='+ref.key +"&game="+ game,
                 // footer
@@ -273,20 +269,6 @@ function SubmitEvent() {
         }),
       }
     )
-<<<<<<< HEAD
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch((error) => {
-      console.error('Error:', error);
-      })
-      // .then(document.location.href="ttps://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game);
-
-      //Load the modal
-      $('#loading').modal({backdrop: 'static', keyboard: false})
-
-      //Wait and then load the event details page
-      setTimeout(() => {  document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game; }, 2000);
-=======
     // .then(response => response.json())
     // .then(data => console.log(data))
     // .catch((error) => {
@@ -299,7 +281,6 @@ function SubmitEvent() {
 
     //Wait and then load the event details page
     setTimeout(() => {  document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game; }, 2000);
->>>>>>> upstream/master
   }
   else
   {
