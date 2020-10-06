@@ -222,7 +222,7 @@ function SubmitEvent() {
                   "inline": true
                   },
                 ],
-                title: title + ' -> Click to Join',
+                title: title + ' >> Click to Join',
                 url:
                 'https://bmansayswhat.github.io/game-scheduler/event-detail.html?e='+ref.key +"&game="+ game,
             },
