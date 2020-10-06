@@ -236,12 +236,12 @@ function SubmitEvent() {
       console.error('Error:', error);
       })
     // .then(document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game);
-    $('#loading').modal({backdrop: 'static', keyboard: false})
-    // $('#loading').modal('show');
 
-    //set the form action to open the event details page which will show the data for the event
-    // document.getElementById("new-event").action = "https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
-    // document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game;
+    //Load the modal
+    $('#loading').modal({backdrop: 'static', keyboard: false})
+
+    //Wait and then load the event details page
+    setTimeout(() => {  document.location.href="https://bmansayswhat.github.io/game-scheduler/event-detail.html?e="+ref.key +"&game="+game; }, 2000);
   }
   else
   {
