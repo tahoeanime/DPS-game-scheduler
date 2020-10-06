@@ -182,8 +182,7 @@ function SubmitEvent() {
       invStartDateMil : invStartDateMil
     });
 
-    fetch(
-      'https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF',
+fetch('https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF',
       {
         method: 'post',
         headers: {
