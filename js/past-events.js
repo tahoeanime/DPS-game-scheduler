@@ -15,9 +15,7 @@ var today = 0-localTime;
 console.log(today);
 
 //Populate templated objects on the page
-SetNav();
 SetGameSelect();
-SetFooter();
 
 //Get the selected game from the radio buttons on the page
 function GetGame(){

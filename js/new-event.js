@@ -19,10 +19,6 @@ if (!Date.now) {
     Date.now = function() { return new Date().getTime(); }
 }
 
-//Populate templated objects on the page
-SetNav();
-SetFooter();
-
 var gameChoice = document.getElementById('game-choice');
 for(i=0; i<availGamesNice.length; i++)
 {

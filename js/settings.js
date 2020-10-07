@@ -49,3 +49,6 @@ function SetFooter()
   `;
   document.getElementById('footer').innerHTML = foot;
 }
+
+SetNav();
+SetFooter();

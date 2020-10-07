@@ -10,10 +10,6 @@ var game = d[1].substr(5); //The game name
 console.log(e);
 console.log(game);
 
-//Populate templated objects on the page
-SetNav();
-SetFooter();
-
 GetData();
 
 //Get the data from the database
