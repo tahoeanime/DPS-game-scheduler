@@ -1,5 +1,5 @@
 //Settings
-var siteURL = "https://tahoeanime.github.io/DPS-game-scheduler";
+var siteURL = "https://bmansayswhat.github.io/game-scheduler";
 var availGamesNice = ['Destiny 2','Elder Scrolls','Other'];
 var availGamesID = ['destiny-2','elder-scrolls','other'];
 
@@ -26,8 +26,8 @@ function SetNav()
   const nav = `
   <a class="nav-item nav-link" name="nav-items" href="${siteURL}/">Upcoming Events <span class="sr-only">(current)</span></a>
   <a class="nav-item nav-link" name="nav-items" href="${siteURL}/new-event.html"><i class="fas fa-plus-circle"></i> New Event</a>
-  <a class="nav-item nav-link" name="nav-items" href="https://dungeonprotocols.godaddysites.com"><i class="fas fa-external-link-alt"></i> DPS Webite</a>
   <a class="nav-item nav-link" name="nav-items" href="${siteURL}/past-events.html">Past Events</a>
+  <a class="nav-item nav-link" name="nav-items" href="https://dungeonprotocols.godaddysites.com"><i class="fas fa-external-link-alt"></i> DPS Webite</a>
   `;
   document.getElementById('siteNav').innerHTML = nav;
 
