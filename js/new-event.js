@@ -112,11 +112,11 @@ function SubmitEvent() {
     break;
     case "elder-scrolls":
       gameNice = "Elder Scrolls";
-      webhookURL = "";
+      webhookURL = "https://discord.com/api/webhooks/371757360042999808/1cFKGLglAaP8y7ciqxyTTPu_yIhylE2fqDFxXFM9f-UBhNbvmFfeWn7XetO8zKHrjqu2";
     break;
     case "other":
       gameNice = "Other";
-      webhookURL = "";
+      webhookURL = "https://discord.com/api/webhooks/397773450464198666/EOkVJekPonqSPTWlkET1bXE34aOPFn44KhAoJg-cA9RoXIoEgha0ybpYFL8xc3hfWqlW";
     break;
   }
 
