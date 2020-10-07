@@ -66,6 +66,8 @@ function GetCategories()
   }
 }
 
+GetCategories();
+
 // Function called when submit button is pressed
 function SubmitEvent() {
 
