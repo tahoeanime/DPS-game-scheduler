@@ -1,5 +1,5 @@
 //Settings
-var siteURL = "https://bmansayswhat.github.io/game-scheduler";
+var siteURL = "https://tahoeanime.github.io/DPS-game-scheduler/";
 var availGamesNice = ['Destiny 2','Elder Scrolls','Other'];
 var availGamesID = ['destiny-2','elder-scrolls','other'];
 
