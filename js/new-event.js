@@ -273,6 +273,9 @@ function SubmitEvent() {
           // embeds to be sent
           embeds: [
             {
+              image: {
+                url: 'https://bmansayswhat.github.io/game-scheduler/img/' + category + '.jpg'
+              },
               // decimal number colour of the side of the embed
               color: 14177041,
               // embed description
@@ -303,6 +306,7 @@ function SubmitEvent() {
                   value: backupSpots,
                   "inline": true
                   },
+
                 ],
                 title: title + ' >> Click to Join',
                 url:
