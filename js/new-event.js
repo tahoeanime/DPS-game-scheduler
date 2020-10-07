@@ -50,18 +50,19 @@ function GetCategories()
   var category = document.getElementById('category');
 
   const destinyCats = `
-  <option value="multiplayer">Multiplayer</option>
+  <option value="crucible">Crucible</option>
+  <option value="gambit">Gambit</option>
+  <option value="strikes">Strikes</option>
   <option value="raid">Raid</option>
-  <option value="goofing">Goofing Around</option>
-  <option value="social">Social</option>
   <option value="other">Other</option>
   `;
 
   const elderCats = `
-  <option value="killing">Killing</option>
-  <option value="looting">Looting</option>
-  <option value="pillaging">Pillaging</option>
-  <option value="other">Other</option>
+  <option value="esostrikes">UnDauanated Pledges</option>
+  <option value="esolostsectors">Delve & Public dungeons</option>
+  <option value="esoraid">Trials</option>
+  <option value="esopvp">Cyrodiil / IC</option>
+  <option value="esoother">Other</option>
   `;
 
   const otherCats = `
