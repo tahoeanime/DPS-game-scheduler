@@ -49,8 +49,10 @@ function GetCategories()
   `;
 
   const otherCats = `
-  <option value="dunno">Dunno</option>
-  <option value="chess">Chess?</option>
+  <option value="casual">Casual</option>
+  <option value="fps">FPS</option>
+  <option value="rpg">RPG</option>
+  <option value="racing">Racing</option>
   `;
 
   switch(game){
