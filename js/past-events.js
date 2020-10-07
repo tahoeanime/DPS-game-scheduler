@@ -14,6 +14,9 @@ var today = 0-localTime;
 
 console.log(today);
 
+//Populate templated objects on the page
+SetGameSelect();
+
 //Get the selected game from the radio buttons on the page
 function GetGame(){
   var radios = document.getElementsByName('game-radios');
@@ -51,7 +54,7 @@ function GetData(game){
       <div class="row">
         <div class="col-lg-6">
           <div class="card mt-4">
-          <img src="https://bmansayswhat.github.io/game-scheduler/img/${eventData.category}.jpg" class="card-img-top" alt="category image">
+          <img src="${siteURL}/img/${eventData.category}.jpg" class="card-img-top" alt="category image">
             <div class="card-body bg-ltred">
               <h5 class="card-title">${eventData.title}</h5>
               <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
@@ -66,7 +69,7 @@ function GetData(game){
               </div>
               <div class="row mt-4">
                 <div class="col">
-                  <a href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail-past.html?e=${eventKey}&game=${eventData.game}" class="btn btn-danger btn-block">View event</a>
+                  <a href="${siteURL}/event-detail-past.html?e=${eventKey}&game=${eventData.game}" class="btn btn-danger btn-block">View event</a>
                 </div>
               </div>
             </div>

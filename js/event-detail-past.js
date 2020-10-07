@@ -160,14 +160,13 @@ function PlayerJoin() {
 function PlayerDelete(id, joinType)
 {
   var ref = firebase.database().ref('/' + game + '/' + e + '/'+ joinType +'/' + id).remove();
-  // document.getElementById("player-join").action = "https://tahoeanime.github.io/DPS-game-scheduler/event-detail-past.html?e="+e +"&game="+game;
   location.reload();
 }
 
 function EventDelete()
 {
   var ref = firebase.database().ref('/' + game + '/' + e).remove();
-  document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/past-events.html";
+  document.location.href=siteURL + "/past-events.html";
 }
 
 $('#deleteEvent').on('shown.bs.modal', function () {

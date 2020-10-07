@@ -13,10 +13,10 @@
   <link rel="stylesheet" href="css/custom.css">
   <script src="https://kit.fontawesome.com/dd82714ffa.js" crossorigin="anonymous"></script>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/game-scheduler/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/game-scheduler/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/game-scheduler/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/game-scheduler/favicon">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://tahoeanime.github.io/DPS-game-scheduler/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://tahoeanime.github.io/DPS-game-scheduler/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://tahoeanime.github.io/DPS-game-scheduler/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://tahoeanime.github.io/DPS-game-scheduler/favicon">
 
   <title>Game Scheduler</title>
 </head>
@@ -28,64 +28,29 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" href="https://tahoeanime.github.io/DPS-game-scheduler/index.html">Upcoming Events</a>
-        <a class="nav-item nav-link" href="https://tahoeanime.github.io/DPS-game-scheduler/new-event.html"><i class="fas fa-plus-circle"></i> New Event</a>
-        <a class="nav-item nav-link" href="https://dungeonprotocols.godaddysites.com">DPS Webite</a>
-        <a class="nav-item nav-link active" href="https://tahoeanime.github.io/DPS-game-scheduler/past-events.html">Past Events <span class="sr-only">(current)</span></a>
+      <div class="navbar-nav" id="siteNav">
+        <!-- Navigation will populate here -->
       </div>
     </div>
   </nav>
   <div class="container">
-    <u><h1 class="mt-4">Past Events</h1></u>
+    <!-- <u><h1 class="mt-4">Past Events</h1></u> -->
     <div class="row">
       <div class="col mt-4">
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-info active">
-            <input type="radio" name="game-radios" id="option1" value="destiny-2" id="destiny-2" checked onclick="GetGame()"> Destiny 2
-          </label>
-          <label class="btn btn-info">
-            <input type="radio" name="game-radios" id="option2" value="elder-scrolls" id="elder-scrolls" onclick="GetGame()"> Elder Scrolls
-          </label>
-          <label class="btn btn-info">
-            <input type="radio" name="game-radios" id="option3" value="other" id="other" onclick="GetGame()"> Other
-          </label>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons" id="game-choice">
+          <!-- Game choices will populate here -->
         </div>
       </div>
     </div>
   </div>
   <div class="container" id="past-events">
-    <!-- <div class="col-md">
-      <div class="card">
-        <h5 class="card-header">Event Name</h5>
-        <div class="card-body">
-          <p class="card-text" id="event1">Event description</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Players:</li>
-          <li class="list-group-item">Start time:</li>
-          <li class="list-group-item">End time:</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md">
-      <div class="card">
-        <h5 class="card-header">Event Name</h5>
-        <div class="card-body">
-          <p class="card-text">Event description</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Players:</li>
-          <li class="list-group-item">Start time:</li>
-          <li class="list-group-item">End time:</li>
-        </ul>
-      </div>
-    </div> -->
+    <!-- events will populate here -->
   </div>
   <footer class="footer">
-    <div class="container">
-      <span>Dungeon Protocols</span>
+    <div class="container" id="footer">
+      <!-- Footer will populate here -->
     </div>
+  </footer>
   </footer>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -98,6 +63,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
   <script src="js/database.js"></script>
+  <script src="js/settings.js"></script>
   <script src="js/past-events.js"></script>
 
 </div>

@@ -19,9 +19,25 @@ if (!Date.now) {
     Date.now = function() { return new Date().getTime(); }
 }
 
+var gameChoice = document.getElementById('game-choice');
+for(i=0; i<availGamesNice.length; i++)
+{
+  const gameSelect = `
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="game-radios" value="${availGamesID[i]}" id="${availGamesID[i]}" onclick="GetCategories()">
+      <label class="form-check-label" for="${availGamesID[i]}">
+        <h4>${availGamesNice[i]}</h4>
+      </label>
+    </div>
+  `;
+  gameChoice.innerHTML += gameSelect;
+}
+var gameRadios = document.getElementsByName('game-radios');
+gameRadios[0].checked = true;
+
+
 function GetCategories()
 {
-  var gameRadios = document.getElementsByName('game-radios');
   for (var i = 0, length = gameRadios.length; i < length; i++) {
     if (gameRadios[i].checked) {
       // do whatever you want with the checked radio
@@ -76,7 +92,6 @@ function SubmitEvent() {
   var complete = new Boolean(true);
 
   //Get the values of each form input and set as variables
-  var gameRadios = document.getElementsByName('game-radios');
   for (var i = 0, length = gameRadios.length; i < length; i++) {
     if (gameRadios[i].checked) {
       // do whatever you want with the checked radio
@@ -278,7 +293,7 @@ function SubmitEvent() {
           embeds: [
             {
               image: {
-                url: 'https://bmansayswhat.github.io/game-scheduler/img/' + category + '.jpg'
+                url: siteURL+ '/img/' + category + '.jpg'
               },
               // decimal number colour of the side of the embed
               color: 14177041,
@@ -314,7 +329,7 @@ function SubmitEvent() {
                 ],
                 title: title + ' >> Click to Join',
                 url:
-                'https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e='+ref.key +"&game="+ game,
+                siteURL + '/event-detail.html?e='+ref.key +"&game="+ game,
                 // footer
                 // - icon next to text at bottom
                 footer: {
@@ -327,6 +342,7 @@ function SubmitEvent() {
         }),
       }
     )
+
     // .then(response => response.json())
     // .then(data => console.log(data))
     // .catch((error) => {
@@ -334,10 +350,14 @@ function SubmitEvent() {
     //   })
     // .then(document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game);
 
+
     //Load the modal
     $('#loading').modal({backdrop: 'static', keyboard: false})
 
     //Wait and then load the event details page
+
+    setTimeout(() => {  document.location.href=siteURL+"/event-detail.html?e="+ref.key +"&game="+game; }, 2000);
+
     setTimeout(() => {  document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game; }, 2000);
   }
   else
