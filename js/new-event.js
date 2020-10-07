@@ -343,11 +343,22 @@ function SubmitEvent() {
       }
     )
 
+    // .then(response => response.json())
+    // .then(data => console.log(data))
+    // .catch((error) => {
+    //   console.error('Error:', error);
+    //   })
+    // .then(document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game);
+
+
     //Load the modal
     $('#loading').modal({backdrop: 'static', keyboard: false})
 
     //Wait and then load the event details page
+
     setTimeout(() => {  document.location.href=siteURL+"/event-detail.html?e="+ref.key +"&game="+game; }, 2000);
+
+    setTimeout(() => {  document.location.href="https://tahoeanime.github.io/DPS-game-scheduler/event-detail.html?e="+ref.key +"&game="+game; }, 2000);
   }
   else
   {
