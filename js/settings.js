@@ -26,7 +26,7 @@ function SetNav()
   const nav = `
   <a class="nav-item nav-link" name="nav-items" href="${siteURL}/">Upcoming Events <span class="sr-only">(current)</span></a>
   <a class="nav-item nav-link" name="nav-items" href="${siteURL}/new-event.html"><i class="fas fa-plus-circle"></i> New Event</a>
-  <a class="nav-item nav-link" name="nav-items" href="https://dungeonprotocols.godaddysites.com">DPS Webite</a>
+  <a class="nav-item nav-link" name="nav-items" href="https://dungeonprotocols.godaddysites.com"><i class="fas fa-external-link-alt"></i> DPS Webite</a>
   <a class="nav-item nav-link" name="nav-items" href="${siteURL}/past-events.html">Past Events</a>
   `;
   document.getElementById('siteNav').innerHTML = nav;
