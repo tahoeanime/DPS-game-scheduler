@@ -51,6 +51,7 @@ function GetData(game){
       <div class="row">
         <div class="col-lg-6">
           <div class="card mt-4">
+          <img src="https://bmansayswhat.github.io/game-scheduler/img/${eventData.category}.jpg" class="card-img-top" alt="category image">
             <div class="card-body bg-ltred">
               <h5 class="card-title">${eventData.title}</h5>
               <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>

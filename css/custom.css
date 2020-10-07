@@ -40,3 +40,21 @@ https://fontawesome.com/icons?d=gallery&m=free
 .bg-ltgrey {
   background-color: #d9d9d9;
 }
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 110px;
+  background-color: #d9d9d9;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}

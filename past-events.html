@@ -13,7 +13,12 @@
   <link rel="stylesheet" href="css/custom.css">
   <script src="https://kit.fontawesome.com/dd82714ffa.js" crossorigin="anonymous"></script>
 
-<title>Game Scheduler</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/game-scheduler/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/game-scheduler/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/game-scheduler/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/game-scheduler/favicon">
+
+  <title>Game Scheduler</title>
 </head>
 <body>
 <div class="bg-ltgrey">
@@ -35,27 +40,17 @@
     <u><h1 class="mt-4">Past Events</h1></u>
     <div class="row">
       <div class="col mt-4">
-        <fieldset class="form-group">
-          <!-- <legend class="col-form-label">Game</legend> -->
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="game-radios" value="destiny-2" id="destiny-2" checked onclick="GetGame()">
-            <label class="form-check-label" for="destiny-2">
-              <h4 class="mt-4">Destiny 2</h4>
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="game-radios" value="elder-scrolls" id="elder-scrolls" onclick="GetGame()">
-            <label class="form-check-label" for="elder-scrolls">
-              <h4 class="mt-4">Elder Scrolls Online</h4>
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="game-radios" value="other" id="other" onclick="GetGame()">
-            <label class="form-check-label" for="other">
-              <h4 class="mt-4">Other</h4>
-            </label>
-          </div>
-        </fieldset>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-info active">
+            <input type="radio" name="game-radios" id="option1" value="destiny-2" id="destiny-2" checked onclick="GetGame()"> Destiny 2
+          </label>
+          <label class="btn btn-info">
+            <input type="radio" name="game-radios" id="option2" value="elder-scrolls" id="elder-scrolls" onclick="GetGame()"> Elder Scrolls
+          </label>
+          <label class="btn btn-info">
+            <input type="radio" name="game-radios" id="option3" value="other" id="other" onclick="GetGame()"> Other
+          </label>
+        </div>
       </div>
     </div>
   </div>
@@ -87,15 +82,11 @@
       </div>
     </div> -->
   </div>
-  <div class="mt-4 bg-dkgreen">
+  <footer class="footer">
     <div class="container">
-      <div class="row">
-        <div class="col mt-4 bg-dkgreen text-white">
-          <h3>Dungeon Protocols</h3>
-        </div>
-      </div>
+      <span>Dungeon Protocols</span>
     </div>
-  </div>
+  </footer>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

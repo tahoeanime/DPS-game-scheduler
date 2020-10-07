@@ -13,7 +13,12 @@
   <link rel="stylesheet" href="css/custom.css">
   <script src="https://kit.fontawesome.com/dd82714ffa.js" crossorigin="anonymous"></script>
 
-<title>Game Scheduler</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/game-scheduler/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/game-scheduler/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/game-scheduler/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/game-scheduler/favicon">
+
+  <title>Game Scheduler</title>
 </head>
 <body>
 <div class="bg-ltgrey">
@@ -43,27 +48,43 @@
         <!-- <form id="new-event" action=""> -->
           <fieldset class="form-group">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="game-radios" value="destiny-2" id="game" checked>
+              <input class="form-check-input" type="radio" name="game-radios" value="destiny-2" id="game" checked onclick="GetCategories()">
               <label class="form-check-label" for="destiny-2">
                 <h4>Destiny 2</h4>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="game-radios" value="elder-scrolls" id="game">
+              <input class="form-check-input" type="radio" name="game-radios" value="elder-scrolls" id="game" onclick="GetCategories()">
               <label class="form-check-label" for="elder-scrolls">
                 <h4>Elder Scrolls Online</h4>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="game-radios" value="other" id="game">
+              <input class="form-check-input" type="radio" name="game-radios" value="other" id="game" onclick="GetCategories()">
               <label class="form-check-label" for="other">
                 <h4>Other</h4>
               </label>
             </div>
           </fieldset>
-          <div class="form-group" name="event-title">
-            <label for="event-title">Event Title</label>
-            <input type="text" class="form-control" id="event-title" placeholder="Event Title">
+          <div class="row">
+            <div class="col">
+              <div class="form-group" name="event-title">
+                <label for="event-title">Event Title</label>
+                <input type="text" class="form-control" id="event-title" placeholder="Event Title">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="category">Event Type</label>
+                <select class="form-control" id="category">
+                  <option value="multiplayer">Multiplayer</option>
+                  <option value="raid">Raid</option>
+                  <option value="goofing">Goofing Around</option>
+                  <option value="social">Social</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
           </div>
           <div class="row">
             <div class="col">
@@ -97,26 +118,26 @@
             <div class="col">
               <fieldset class="form-group">
                 <legend class="col-form-label">Timezone</legend>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="timezones" value="PST" id="timezones" checked>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="timezones" value="PST" id="pst" checked>
                   <label class="form-check-label" for="pst">
                     PST
                   </label>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="timezones" value="MST" id="timezones">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="timezones" value="MST" id="mst">
                   <label class="form-check-label" for="mst">
                     MST
                   </label>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="timezones" value="CST" id="timezones">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="timezones" value="CST" id="cst">
                   <label class="form-check-label" for="cst">
                     CST
                   </label>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="timezones" value="EST" id="timezones">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="timezones" value="EST" id="est">
                   <label class="form-check-label" for="est">
                     EST
                   </label>
@@ -160,15 +181,11 @@
       </div>
     </div>
   </div>
-  <div class="mt-4 bg-dkgreen">
+  <footer class="footer">
     <div class="container">
-      <div class="row">
-        <div class="col mt-4 bg-dkgreen text-white">
-          <h3>Dungeon Protocols</h3>
-        </div>
-      </div>
+      <span>Dungeon Protocols</span>
     </div>
-  </div>
+  </footer>
   <!-- Modal -->
   <div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="loadingEventModal" aria-hidden="true">
      <div class="modal-dialog" role="document">

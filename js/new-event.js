@@ -19,6 +19,57 @@ if (!Date.now) {
     Date.now = function() { return new Date().getTime(); }
 }
 
+function GetCategories()
+{
+  var gameRadios = document.getElementsByName('game-radios');
+  for (var i = 0, length = gameRadios.length; i < length; i++) {
+    if (gameRadios[i].checked) {
+      // do whatever you want with the checked radio
+      var game = gameRadios[i].value
+      // only one radio can be logically checked, don't check the rest
+      break;
+    }
+  }
+
+  var category = document.getElementById('category');
+
+  const destinyCats = `
+  <option value="multiplayer">Multiplayer</option>
+  <option value="raid">Raid</option>
+  <option value="goofing">Goofing Around</option>
+  <option value="social">Social</option>
+  <option value="other">Other</option>
+  `;
+
+  const elderCats = `
+  <option value="killing">Killing</option>
+  <option value="looting">Looting</option>
+  <option value="pillaging">Pillaging</option>
+  <option value="other">Other</option>
+  `;
+
+  const otherCats = `
+  <option value="casual">Casual</option>
+  <option value="fps">FPS</option>
+  <option value="rpg">RPG</option>
+  <option value="racing">Racing</option>
+  `;
+
+  switch(game){
+    case "destiny-2":
+    category.innerHTML = destinyCats;
+    break;
+    case "elder-scrolls":
+    category.innerHTML = elderCats;
+    break;
+    case "other":
+    category.innerHTML = otherCats;
+    break;
+  }
+}
+
+GetCategories();
+
 // Function called when submit button is pressed
 function SubmitEvent() {
 
@@ -66,6 +117,8 @@ function SubmitEvent() {
       element.parentElement.innerHTML += '<div class="invalid-feedback">Give your event a title</div>';
     }
   }
+
+  var category = document.getElementById("category").value;
 
   var startDate = document.getElementById("start-date").value;
   if(startDate == '')
@@ -192,6 +245,7 @@ function SubmitEvent() {
       game: game,
       gameNice: gameNice,
       title: title,
+      category: category,
       startDate : startDate,
       startTime : startTime,
       endDate : endDate,
@@ -223,6 +277,9 @@ function SubmitEvent() {
           // embeds to be sent
           embeds: [
             {
+              image: {
+                url: 'https://bmansayswhat.github.io/game-scheduler/img/' + category + '.jpg'
+              },
               // decimal number colour of the side of the embed
               color: 14177041,
               // embed description
@@ -253,6 +310,7 @@ function SubmitEvent() {
                   value: backupSpots,
                   "inline": true
                   },
+
                 ],
                 title: title + ' >> Click to Join',
                 url:
