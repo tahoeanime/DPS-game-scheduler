@@ -13,10 +13,10 @@
   <link rel="stylesheet" href="css/custom.css">
   <script src="https://kit.fontawesome.com/dd82714ffa.js" crossorigin="anonymous"></script>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/game-scheduler/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/game-scheduler/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/game-scheduler/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/game-scheduler/favicon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/DPS-game-scheduler/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/DPS-game-scheduler/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/DPS-game-scheduler/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/DPS-game-scheduler/favicon">
 
   <title>Game Scheduler</title>
 </head>
@@ -28,16 +28,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" href="https://tahoeanime.github.io/DPS-game-scheduler/index.html">Upcoming Events</a>
-        <a class="nav-item nav-link active" href="https://tahoeanime.github.io/DPS-game-scheduler/new-event.html"><i class="fas fa-plus-circle"></i> New Event <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="https://dungeonprotocols.godaddysites.com">DPS Webite</a>
-        <a class="nav-item nav-link" href="https://tahoeanime.github.io/DPS-game-scheduler/past-events.html">Past Events</a>
+      <div class="navbar-nav" id="siteNav">
+        <!-- Navigation will populate here -->
       </div>
     </div>
   </nav>
   <div class="container">
-    <u><h1 class="mt-4">Create a New Event</h1></u>
+    <!-- <u><h1 class="mt-4">Create a New Event</h1></u> -->
     <!-- <div class="row">
       <div class="col mt-4">
         <img src="http://placekitten.com/1800/600" class="img-fluid" alt="Responsive image">
@@ -45,26 +42,8 @@
     </div> -->
     <div class="row">
       <div class="col mt-4">
-        <!-- <form id="new-event" action=""> -->
-          <fieldset class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="game-radios" value="destiny-2" id="game" checked onclick="GetCategories()">
-              <label class="form-check-label" for="destiny-2">
-                <h4>Destiny 2</h4>
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="game-radios" value="elder-scrolls" id="game" onclick="GetCategories()">
-              <label class="form-check-label" for="elder-scrolls">
-                <h4>Elder Scrolls Online</h4>
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="game-radios" value="other" id="game" onclick="GetCategories()">
-              <label class="form-check-label" for="other">
-                <h4>Other</h4>
-              </label>
-            </div>
+          <fieldset class="form-group" id="game-choice">
+            <!-- game choices will fill in here -->
           </fieldset>
           <div class="row">
             <div class="col">
@@ -219,6 +198,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
   <script src="js/database.js"></script>
+  <script src="js/settings.js"></script>
   <script src="js/new-event.js"></script>
 
 </div>
