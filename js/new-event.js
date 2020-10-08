@@ -58,18 +58,18 @@ function GetCategories()
   `;
 
   const elderCats = `
-  <option value="esostrikes">UnDauanated Pledges</option>
-  <option value="esolostsectors">Delve & Public dungeons</option>
-  <option value="esoraid">Trials</option>
-  <option value="esopvp">Cyrodiil / IC</option>
-  <option value="esoother">Other</option>
+  <option value="comingsoon">UnDauanated Pledges</option>
+  <option value="comingsoon">Delve & Public dungeons</option>
+  <option value="comingsoon">Trials</option>
+  <option value="comingsoon">Cyrodiil / IC</option>
+  <option value="comingsoon">Other</option>
   `;
 
   const otherCats = `
-  <option value="casual">Casual</option>
-  <option value="fps">FPS</option>
-  <option value="rpg">RPG</option>
-  <option value="racing">Racing</option>
+  <option value="comingsoon">Casual</option>
+  <option value="comingsoon">FPS</option>
+  <option value="comingsoon">RPG</option>
+  <option value="comingsoon">Racing</option>
   `;
 
   switch(game){
