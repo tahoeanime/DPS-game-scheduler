@@ -33,6 +33,7 @@ function GetData(){
     <div class="card">
       <h5 class="card-header bg-dkgreen text-white">${eventData.gameNice}</h5>
       <div class="card-body">
+      <img src="${siteURL}/img/${eventData.category}.jpg" class="card-img-top" alt="category image">
         <h5 class="card-title">${eventData.title}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${eventData.details}</h6>
         <div class="row mt-4">
