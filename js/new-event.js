@@ -87,10 +87,6 @@ function GetCategories()
 
 GetCategories();
 
-function GetTimezone()
-{
-
-}
 
 // Function called when submit button is pressed
 function SubmitEvent() {
