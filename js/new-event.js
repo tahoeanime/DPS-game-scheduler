@@ -229,29 +229,30 @@ function SubmitEvent() {
   }
 
   //Handle timezones
-  var localOffset = 0;
-  switch(timezone)
-  {
-    case "PST":
-    localOffset = 2 * 3600000;
-    break;
-    case "MST":
-    localOffset = 1 * 3600000;
-    break;
-    case "CST":
-    localOffset = 0 * 3600000;
-    break;
-    case "EST":
-    localOffset = -1 * 3600000;
-    break;
-  }
+  var d = new Date();
+  var localOffset = d.getTimezoneOffset(); //get the local offset in minutes
+  // switch(timezone)
+  // {
+  //   case "PST":
+  //   localOffset = 2 * 3600000;
+  //   break;
+  //   case "MST":
+  //   localOffset = 1 * 3600000;
+  //   break;
+  //   case "CST":
+  //   localOffset = 0 * 3600000;
+  //   break;
+  //   case "EST":
+  //   localOffset = -1 * 3600000;
+  //   break;
+  // }
 
   var inverseDate = 0 - Date.now();
-  var startDateMil = new Date(startDate + ' ' + startTime).getTime();
-  startDateMil += localOffset;
+  var startDateMil = new Date(startDate + ' ' + startTime).getUTCMilliseconds();
+  startDateMil += (localOffset * 60000); //6,000 milliseconds in a minute
   var invStartDateMil = 0-startDateMil;
-  var endDateMil = new Date(endDate + ' ' + endTime).getTime();
-  endDateMil += localOffset;
+  var endDateMil = new Date(endDate + ' ' + endTime).getUTCMilliseconds();
+  endDateMil += (localOffset * 60000); //6,000 milliseconds in a minute
 
   //If the fields are all complete, add to the database
   if(complete == true)
