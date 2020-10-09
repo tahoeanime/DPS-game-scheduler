@@ -248,11 +248,14 @@ function SubmitEvent() {
   // }
 
   var inverseDate = 0 - Date.now();
-  var startDateMil = new Date(startDate + ' ' + startTime).getUTCMilliseconds();
-  startDateMil += (localOffset * 60000); //6,000 milliseconds in a minute
+  var sd = new Date(startDate + ' ' + startTime);
+  var startDateMil = sd.getTime();
+  var regExp = /\(([^)]+)\)/; //Regular expression to get the text between ()
+  var sdString = regExp.exec(sd); //execute the regular expression to get the timezone
+  var tz = sdString[1].split(" ");
+  timezone = tz[0];
   var invStartDateMil = 0-startDateMil;
-  var endDateMil = new Date(endDate + ' ' + endTime).getUTCMilliseconds();
-  endDateMil += (localOffset * 60000); //6,000 milliseconds in a minute
+  var endDateMil = new Date(endDate + ' ' + endTime).getTime();
 
   //If the fields are all complete, add to the database
   if(complete == true)
