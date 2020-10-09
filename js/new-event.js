@@ -258,7 +258,7 @@ function SubmitEvent() {
   var regExp = /\(([^)]+)\)/; //Regular expression to get the text between ()
   var sdString = regExp.exec(sd); //execute the regular expression to get the timezone
   var tz = sdString[1].split(" ");
-  timezone = tz[0];
+  var timezone = tz[0];
   var invStartDateMil = 0-startDateMil;
   var endDateMil = new Date(endDate + ' ' + endTime).getTime();
 
