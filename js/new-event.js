@@ -87,6 +87,7 @@ function GetCategories()
 
 GetCategories();
 
+
 // Function called when submit button is pressed
 function SubmitEvent() {
 
@@ -188,15 +189,15 @@ function SubmitEvent() {
     }
   }
 
-  var tzRadios = document.getElementsByName('timezones');
-  for (var i = 0, length = tzRadios.length; i < length; i++) {
-    if (tzRadios[i].checked) {
-      // do whatever you want with the checked radio
-      var timezone = tzRadios[i].value
-      // only one radio can be logically checked, don't check the rest
-      break;
-    }
-  }
+  // var tzRadios = document.getElementsByName('timezones');
+  // for (var i = 0, length = tzRadios.length; i < length; i++) {
+  //   if (tzRadios[i].checked) {
+  //     // do whatever you want with the checked radio
+  //     var timezone = tzRadios[i].value
+  //     // only one radio can be logically checked, don't check the rest
+  //     break;
+  //   }
+  // }
 
   var openSpots = document.getElementById("open-spots").value;
 
@@ -253,7 +254,7 @@ function SubmitEvent() {
   var regExp = /\(([^)]+)\)/; //Regular expression to get the text between ()
   var sdString = regExp.exec(sd); //execute the regular expression to get the timezone
   var tz = sdString[1].split(" ");
-  timezone = tz[0];
+  var timezone = tz[0];
   var invStartDateMil = 0-startDateMil;
   var endDateMil = new Date(endDate + ' ' + endTime).getTime();
 
