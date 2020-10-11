@@ -58,10 +58,12 @@ function GetCategories()
   `;
 
   const elderCats = `
-  <option value="comingsoon">UnDauanated Pledges</option>
-  <option value="comingsoon">Delve & Public dungeons</option>
-  <option value="comingsoon">Trials</option>
-  <option value="comingsoon">Cyrodiil / IC</option>
+  <option value="dailyquests">Daily Quests</option>
+  <option value="publicdelves">Public Delves</option>
+  <option value="publicdungeons">Public Dungeons</option>
+  <option value="undauntedpledges">Undaunted Pledges</option>
+  <option value="esotrials">Trials</option>
+  <option value="esopvp">PVP</option>
   <option value="comingsoon">Other</option>
   `;
 
