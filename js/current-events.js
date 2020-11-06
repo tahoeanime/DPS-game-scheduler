@@ -39,7 +39,7 @@ function GetData(game){
   //Clear the html on the page
   document.getElementById("events").innerHTML = '';
   //Get the data from the database for the selected radio button
-  return database.ref('/' + game).orderByChild('startDateMil').startAt(today).once('value', function(snapshot) {
+  return database.ref('/' + game).orderByChild('endDateMil').startAt(today).once('value', function(snapshot) {
     // console.log(snapshot.val());
     if(snapshot.val() == null)
     {
