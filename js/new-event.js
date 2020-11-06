@@ -64,7 +64,7 @@ function GetCategories()
   <option value="undauntedpledges">Undaunted Pledges</option>
   <option value="esotrials">Trials</option>
   <option value="esopvp">PVP</option>
-  <option value="comingsoon">Other</option>
+  <option value="esoother">Other</option>
   `;
 
   const otherCats = `
