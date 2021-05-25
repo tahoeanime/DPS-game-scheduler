@@ -113,12 +113,12 @@ function SubmitEvent() {
     case "destiny-2":
       gameNice = "Destiny 2";
       webhookURL = "https://discord.com/api/webhooks/371746863659089922/N0QZnhnYHMlRX8hj8nuqmXjvFXP8GG-3tNntd-vVSlLrN3D2lo0JnmHK4e8gcVYwFBDF";
-      discordannouncement = "@Destiny 2 💠";
+      discordannouncement = "@Destiny 2";
     break;
     case "elder-scrolls":
       gameNice = "Elder Scrolls";
       webhookURL = "https://discord.com/api/webhooks/371757360042999808/1cFKGLglAaP8y7ciqxyTTPu_yIhylE2fqDFxXFM9f-UBhNbvmFfeWn7XetO8zKHrjqu2";
-      discordannouncement = "Elder Scolls Online ⚔";
+      discordannouncement = "@Elder Scolls Online";
     break;
     case "other":
       gameNice = "Other";
