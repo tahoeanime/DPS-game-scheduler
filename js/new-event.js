@@ -295,7 +295,7 @@ function SubmitEvent() {
         body: JSON.stringify({
           // contents of the message to be sent
           content:
-            'everyone',
+            '@Destiny 2 💠 ',
           // embeds to be sent
           embeds: [
             {
@@ -309,12 +309,12 @@ function SubmitEvent() {
               fields: [
                   {
                   name: 'Start Time',
-                  value: startTime + ' ' + timezone,
+                  value: startDate + startTime + ' ' + timezone,
                   "inline": true
                   },
                   {
                   name: 'End Time',
-                  value: endTime + ' ' + timezone,
+                  value: endDate + endTime + ' ' + timezone,
                   "inline": true
                   },
                   {
@@ -342,7 +342,7 @@ function SubmitEvent() {
                 footer: {
                   text: 'DPS',
                   icon_url:
-                    'https://cdn.discordapp.com/icons/230026270258364417/248837c9a0a596cdffc65facdbb7cfeb.png?size=128',
+                    'https://cdn.discordapp.com/icons/230026270258364417/f3cf9bdd5f3b5b4bf2e658043e9b8fb2.png?size=128',
                 },
             },
           ],
