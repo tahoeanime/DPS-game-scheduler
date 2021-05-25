@@ -308,27 +308,27 @@ function SubmitEvent() {
               description: details,
               fields: [
                   {
-                  name: 'Start Time',
+                  name: '**Start Time:**',
                   value: startDate + ' ' + startTime + ' ' + timezone,
                   "inline": true
                   },
                   {
-                  name: 'End Time',
+                  name: '**End Time:**',
                   value: endDate + ' ' + endTime + ' ' + timezone,
                   "inline": true
                   },
                   {
-                  name: 'Created by:',
+                  name: '**Created by:**',
                   value: gamertag,
                   "inline": true
                   },
                   {
-                  name: 'Open spots:',
+                  name: '**Open spots:**',
                   value: openSpots,
                   "inline": true
                   },
                   {
-                  name: 'backup spots:',
+                  name: '**Backup spots:**',
                   value: backupSpots,
                   "inline": true
                   },
