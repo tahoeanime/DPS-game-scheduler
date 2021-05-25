@@ -295,7 +295,7 @@ function SubmitEvent() {
         body: JSON.stringify({
           // contents of the message to be sent
           content:
-            '@Destiny 2 💠 ',
+            '@everyone',
           // embeds to be sent
           embeds: [
             {
@@ -309,12 +309,12 @@ function SubmitEvent() {
               fields: [
                   {
                   name: 'Start Time',
-                  value: startDate + startTime + ' ' + timezone,
+                  value: startDate + ' ' + startTime + ' ' + timezone,
                   "inline": true
                   },
                   {
                   name: 'End Time',
-                  value: endDate + endTime + ' ' + timezone,
+                  value: endDate + ' ' + endTime + ' ' + timezone,
                   "inline": true
                   },
                   {
