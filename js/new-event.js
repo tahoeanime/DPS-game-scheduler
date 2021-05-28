@@ -118,7 +118,7 @@ function SubmitEvent() {
     case "elder-scrolls":
       gameNice = "Elder Scrolls";
       webhookURL = "https://discord.com/api/webhooks/371757360042999808/1cFKGLglAaP8y7ciqxyTTPu_yIhylE2fqDFxXFM9f-UBhNbvmFfeWn7XetO8zKHrjqu2";
-      discordannouncement = "@Elder Scolls Online";
+      discordannouncement = "<@&572445050852868106>";
     break;
     case "other":
       gameNice = "Other";
